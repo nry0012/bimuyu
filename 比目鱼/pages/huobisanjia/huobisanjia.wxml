@@ -1,0 +1,9 @@
+<!--pages/agent/agent.wxml-->
+<view class='container'>
+  <view class='bimuyu'>
+    <image src='../image/logo.png' class='bimuyu-img'></image>
+  </view>
+  <view class='anniu'>
+    <button class='anniu1' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信一键登录</button>
+  </view>
+</view>

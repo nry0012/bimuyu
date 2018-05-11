@@ -1,0 +1,51 @@
+<!--lingquan.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="top1">
+      <view class="chanpin">
+        <view class="chanpintu">
+          <image src="{{goodsdata.pic_url}}" class="goodsimage"></image>
+        </view>
+        <view class="chanpinxiangxi">
+          <text class="goodsname">{{goodsdata.title}}</text>
+          <view class="originalprice">
+            <text class="originalpriceziti">原价</text>
+            <text class="fuhao">￥</text>
+            <text class="originalprice1">{{goodsdata.price}}</text>
+          </view>
+          <view class="from">
+            <image src="../image/quantu.png" class="laiyuan"></image>
+            <view class="quanhoujia">
+              <text class="goodsprice">￥{{goodsdata.coupon_price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="shangpinquan" bindtap="chanpinneiye">
+      <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/lingqutu.png" class="youhuiquan" bindtap="showModal1">
+          <view class="quaneweizhi">
+        <text class="quane">{{goodsdata.quan}}</text>
+      </view>
+      </image>
+    
+      <!-- <text class="shoujia">{{goodsdata.saleprice}}</text> -->
+    </view>
+  </view>
+  <view class="bottom">
+    <button open-type="share" wx:if="{{isShare==0}}">
+  <image src="../image/fa.png" class="tuiguang"></image>
+  </button>
+    <text class="huodong">活动说明</text>
+    <block wx:for="{{goodsdata1}}" wx:key="item.activeID">
+      <text class="huodong1">{{item.active}}</text>
+    </block>
+
+    <view class="bottom1">
+      <text class="guize">规则声明</text>
+      <block wx:for="{{goodsdata2}}" wx:key="item.guizeID">
+        <text class="huodong1">{{item.guize}}</text>
+      </block>
+    </view>
+  </view>
+</view>

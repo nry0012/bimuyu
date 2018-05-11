@@ -1,0 +1,11 @@
+/* jiaocheng.wxss */
+.container{
+  padding: 0;
+  margin: 0;
+width: 100%;
+height: 100%;
+}
+.jiaocheng-img{
+  width: 750rpx;
+  height: 3600rpx;
+}

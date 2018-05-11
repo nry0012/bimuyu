@@ -1,0 +1,49 @@
+<!--pages/sort/sort.wxml-->
+<import src="../../component/title/title.wxml" />
+<view class='container'>
+<template is="compTitle" data="{{ ...comTitle}}" />
+  <view class='top'>
+    <view class="baisekuai" bindtap="search">
+      <image src="../image/sousuoshangpin.png" class="fangdajing"></image>
+    </view>
+  </view>
+  <view class="content">
+    <view class="left-menu">
+      <scroll-view style='height:{{height-50}}px' scroll-y="true" bindscroll="scroll">
+        <view class="menu-item" wx:for="{{goodsdata2}}" wx:key="{{item.picSort}}">
+          <image id="{{item.picSort}}" src="{{searchItem==item.picSort?item.picUrl:item.picUrlDisable}}" data-name="{{item.picName}}" class='sort-img' bindtap='serviceSelection'></image>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="right">
+      <scroll-view style='height:{{height-50}}px' scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" bindscroll="scroll">
+        <!-- 精选 -->
+        <view class='right-con'>
+          <block class='kuai' wx:for="{{act_addList}}" wx:key="{{item.id}}">
+            <view class='right-title' id="inToView{{item.id}}" name="{{item.id}}" bindtap="activity">
+              <image src='{{item.typeBanner}}' class='typeBannerImg'></image>
+            </view>
+            <view class="typeTile">
+              <view class='titleLeft'></view>
+              <view class='titleText'>{{item.region}}</view>
+              <view class='titleRight'></view>
+
+            </view>
+            <view class="hengxiang">
+              <block wx:for="{{item.city}}" wx:key="item.picSort">
+                <view class="zongxiang1" bindtap="sortsearch" id="{{item.picSort}}">
+                  <image src="{{item.picUrl}}" class="tu"></image>
+                </view>
+              </block>
+            </view>
+            <view class='typeBottom' id="{{item.id}}" bindtap='searchMore'>
+              查看更多商品
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+
+
+    </view>
+  </view>
+</view>

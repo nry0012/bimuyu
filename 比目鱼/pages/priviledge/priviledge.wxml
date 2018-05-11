@@ -1,0 +1,7 @@
+<!--pages/priviledge/priviledge.wxml-->
+
+<view class="container">
+<image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/priviledge.png" class="tu"></image>
+
+</view>
+

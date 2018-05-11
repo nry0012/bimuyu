@@ -1,0 +1,207 @@
+/* pages/memberCenter2/memberCenter2.wxss */
+
+button {
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  background-color: white;
+  color: #595959;
+}
+
+.header {
+  border-bottom: 3px solid #f1f4f3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.withdrawInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-left: 50rpx;
+  text-align: left;
+}
+
+.withdrawTitle {
+  font-size: 16px;
+}
+
+.withdrawAmount {
+  font-size: 24px;
+}
+
+.withdrawAmountUnit {
+  font-size: 10px;
+}
+
+.withdrawHint {
+  font-size: 10px;
+  color: #aaa;
+}
+
+.withdrawButton {
+  width: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+  /* margin-right: 50px ;*/
+}
+
+.withdrawButtonItem {
+  background: #f54751;
+  letter-spacing: 1px;
+}
+
+.performance {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.lastMonth {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rpx;
+  text-align: left;
+}
+
+.lastMonthTitle {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.lastMonthAmount {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.lastMonthState {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.separator {
+  width: 2%;
+  height: 80px;
+  border-right: 2px solid #979797;
+}
+
+.nextMonth {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rpx;
+  text-align: left;
+}
+
+.monthTitle {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.monthAmount {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.monthState {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+.sep1 {
+  width: 100%;
+  background: #f1f4f3;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  padding-left: 50rpx;
+  text-align: left;
+}
+
+.point {
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100px;
+  display: flex;
+  margin-right: 50px;
+}
+
+.pointButton {
+  background: #4a90e2;
+}
+
+.finance {
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin-right: 50px;
+}
+
+.financeButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.financeButtonItem {
+  background: #f5a623;
+}
+
+.financeHint {
+  font-size: 12px;
+  line-height: 36px;
+}
+
+.insurance {
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin-right: 50px;
+}
+
+.insuranceButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.insuranceButtonItem {
+  background: #7ed321;
+}
+
+.insuranceHint {
+  font-size: 12px;
+  line-height: 36px;
+}
+
+.insuranceImg {
+
+}
+.img {
+  width: 50px;
+  height:  50px;
+}

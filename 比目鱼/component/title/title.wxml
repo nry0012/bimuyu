@@ -1,0 +1,15 @@
+<!--component/title/title.wxml-->
+<template name="compTitle">
+  <view class='comTitle'>
+    <view class='comBack' wx:if="{{isHide}}" bindtap='Back'>
+      <image src='../../pages/image/back.png' class="comBackImg"></image>
+    </view>
+    <view class='comText'>{{comTitle}}</view>
+  </view>
+</template>
+
+<template name="compBack">
+  <view class='comOnlyBack' bindtap='Back'>
+    <image src='../../pages/image/back.png' class="comBackImg"></image>
+  </view>
+</template>

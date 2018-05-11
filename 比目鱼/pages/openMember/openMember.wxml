@@ -1,0 +1,111 @@
+<!--pages/openMember/openMember.wxml-->
+<view class="content">
+	<view class="header">
+		<view class="openImg1">
+			<image class="headBack" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openBack.png"></image>
+		</view>
+		<image class="levelImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openCommon.png" wx:if="{{levelSel==1}}"></image>
+		<image class="levelImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openCronze.png" wx:if="{{levelSel==2}}"></image>
+		<image class="levelImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openSilver.png" wx:if="{{levelSel==3}}"></image>
+		<image class="levelImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openGolden.png" wx:if="{{levelSel==4}}"></image>
+		<view class="openButton" bindtap="openMember">
+			<image class="openButtonImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openMember.png"></image>
+		</view>
+	</view>
+	<view class="illustrate">
+		<image class="openIllustrateImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openIllustrator.png"></image>
+		<button class="buttonCommon" id="1" bindtap='selLevel' plain="true"></button>
+		<button class="buttonCronze" id="2" bindtap='selLevel'></button>
+		<button class="buttonSilver" id="3" bindtap='selLevel'></button>
+		<button class="buttonGolden" id="4" bindtap='selLevel'></button>
+	</view>
+	<view class="million" bindtap='millionAct'>
+		<image class="millionImg" src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/openMillion.png"></image>
+<!--		<button class="buttonInvite" open-type="share"></button> -->
+	</view>
+  <!--
+	  <view class="cainixihuan">
+    <view class="bottom1">
+      <view class="left">
+        <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+          <view wx:if="{{item.iid % 2 == 1}}" class="image-left" bindtap="showGoods" id="{{item.id}}">
+            <image src="{{item.pic_url}}" data-id="{{item.id}}" class="image"></image>
+            <view class="quanetu">
+              <image src="../image/quane.png" class="quanetu1"></image>
+            </view>
+            <view class="quanedu">
+              <text class="quanedu_text">{{item.quan}}</text>
+            </view>
+            <view class="chanpinxinxi">
+              <view class="laiyuan">
+                <image class="laiyuan" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                <image class="laiyuan" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                <image class="laiyuan" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+              </view>
+              <text class="goodsname">{{item.title}}</text>
+            </view>
+            <view class="view-op">
+              <view class="original-price">
+                <text class="yuanjia">原价：</text>
+                <text class="yuanjia1">{{item.price}}</text>
+              </view>
+              <view class="commission" wx:if="{{renwushenfen==1}}">
+                佣金:{{item.usercommission}}
+              </view>
+            </view>
+            <view class="view-op2">
+              <view class="volume">
+                <text class="yuanjia">销量：</text>
+                <text class="xiaoliang">{{item.volume}}</text>
+              </view>
+              <view class="ticket">
+                <text class="originalPrice1">券后:</text>
+                <text class="originalPrice2">{{item.coupon_price}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+          <view wx:if="{{item.iid % 2 !== 1}}" class="image-right" bindtap="showGoods" id="{{item.id}}">
+            <image src="{{item.pic_url}}" data-id="{{item.id}}" class="image"></image>
+            <view class="quanetu">
+              <image src="../image/quane.png" class="quanetu1"></image>
+            </view>
+            <view class="quanedu">
+              <text class="quanedu_text">{{item.quan}}</text>
+            </view>
+            <view class="chanpinxinxi">
+              <view class="laiyuan">
+                <image class="laiyuan" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                <image class="laiyuan" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                <image class="laiyuan" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+              </view>
+              <text class="goodsname">{{item.title}}</text>
+            </view>
+            <view class="view-op">
+              <view class="original-price">
+                <text class="yuanjia">原价：</text>
+                <text class="yuanjia1">{{item.price}}</text>
+              </view>
+              <view class="commission" wx:if="{{renwushenfen==1}}">
+                佣金:{{item.usercommission}}
+              </view>
+            </view>
+            <view class="view-op2">
+              <view class="volume">
+                <text class="yuanjia">销量：</text>
+                <text class="xiaoliang">{{item.volume}}</text>
+              </view>
+              <view class="ticket">
+                <text class="originalPrice1">券后:</text>
+                <text class="originalPrice2">{{item.coupon_price}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>-->
+</view>

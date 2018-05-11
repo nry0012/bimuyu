@@ -1,0 +1,280 @@
+/* lingquan.wxss */
+
+page {
+  background: #f2f2f2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+
+
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 750rpx;
+  height: 630rpx;
+}
+
+.top1 {
+  display: flex;
+  flex-direction: row;
+}
+.chanpin {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40rpx;
+  width: 100%;
+  /* margin-right: 10rpx; */
+}
+
+.chanpintu {
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 68%;
+}
+
+.goodsimage {
+  width: 100%;
+  height: 320rpx;
+}
+
+.quanhoujia {
+  /* margin-top: -2%; */
+}
+
+.chanpinxiangxi {
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 20rpx; */
+  margin-right: 1%;
+  width: 70%;
+}
+
+.goodsname {
+  /* margin-bottom: 120rpx; */
+  font-size: 14px;
+  color: #595959;
+  font-family: '微软雅黑';
+  display: block;
+  height: 150rpx;
+  width: 90%;
+}
+
+.originalprice {
+  display: block;
+  flex-direction: row;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.originalpriceziti {
+  font-size: 11pt;
+  color: #b3b3b3;
+  font-family: '微软雅黑';
+  margin-left: 16rpx;
+  padding-top: 35rpx;
+}
+
+.fuhao {
+  font-size: 13pt;
+  color: #b3b3b3;
+  font-family: '微软雅黑';
+  margin-left: 16rpx;
+  padding-top: 35rpx;
+}
+
+.originalprice1 {
+  font-size: 13pt;
+  color: #b3b3b3;
+  font-family: '微软雅黑';
+  margin-left: 16rpx;
+  padding-top: 35rpx;
+  text-decoration: line-through;
+}
+
+.from {
+  display: flex;
+  flex-direction: row;
+  margin-right: 30rpx;
+  margin-top: 10%;
+}
+
+.laiyuan {
+  width: 120rpx;
+  height: 54rpx;
+}
+
+.goodsprice {
+  font-size: 15pt;
+  color: #f54751;
+  font-family: '微软雅黑';
+  margin-left: 16rpx;
+}
+
+.huodong {
+  text-align: center;
+  padding-top: 50rpx;
+  padding-bottom: 30rpx;
+  font-size: 17px;
+  color: #595959;
+  font-family: '微软雅黑';
+}
+
+.guize {
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  font-size: 17px;
+  color: #595959;
+  font-family: '微软雅黑';
+}
+
+.huodong1 {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-bottom: 10rpx;
+  font-size: 14px;
+  font-family: '微软雅黑';
+  color: #d7d7d7;
+}
+
+.youhuiquan {
+  width: 700rpx;
+  height: 260rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+  position: relative;
+}
+
+.quaneweizhi {
+   width: 200rpx; 
+  height: 130rpx;
+  position: absolute;
+  left: 33%;
+  top: 30%;
+  text-align: center;
+}
+
+.quane {
+  z-index: 10000;
+  color: #f8f8f8;
+  font-size: 48px;
+  font-family: '微软雅黑';
+}
+
+.shoujia {
+  position: absolute;
+  left: 472rpx;
+  top: 440rpx;
+  z-index: 10000;
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+.commodity_screen1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.6;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.commodity_attr_box1 {
+  width: 600rpx;
+  height: 300rpx;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 480rpx;
+  left: 80rpx;
+  z-index: 20000;
+  background: #fff;
+}
+
+.alert {
+  display: flex;
+  flex-direction: column;
+}
+
+.success {
+  text-align: center;
+  font-size: 15px;
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+  font-weight: bold;
+  padding-top: 30rpx;
+}
+
+.taokouling {
+  text-align: center;
+  font-size: 13px;
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+  padding-top: 40rpx;
+  color: #bbb;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.shuxian {
+  text-align: center;
+  width: 1px;
+  height: 35px;
+  background: #e0e0e0;
+  margin-left: 72rpx;
+}
+
+.dibu {
+  display: flex;
+  flex-direction: row;
+}
+
+.liucheng {
+  color: #f27a56;
+  text-align: left;
+  font-size: 16px;
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+  font-weight: bold;
+  padding-top: 28rpx;
+  padding-left: 95rpx;
+}
+
+.know {
+  color: greenyellow;
+  text-align: left;
+  font-size: 16px;
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+  font-weight: bold;
+  padding-top: 28rpx;
+  padding-left: 174rpx;
+}
+
+.tuiguang {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  left: 660rpx;
+  margin-top: 30rpx;
+  /* top: 50rpx; *//* top: -600rpx;
+  left: 473rpx;
+  margin-right: 22px; */
+}

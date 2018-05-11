@@ -1,0 +1,160 @@
+/* xiaoxizhongxin.wxss */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0rpx;
+  padding: 0rpx;
+  overflow-x: hidden;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 120rpx;
+}
+
+.xinxi {
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+/*  margin-top: 30rpx;
+  padding-bottom: 10rpx; */
+}
+
+.xiaoxitu {
+  width: 15rpx;
+  height: 24rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.gongxi {
+  font-size: 11pt;
+  color: #595959;
+  padding-right: 20rpx;
+}
+
+.gongxi1 {
+  font-size: 11pt;
+  color: #adadad;
+  padding-right: 20rpx;
+}
+
+.gongxi2 {
+  font-size: 11pt;
+  color: #9D6201;
+  padding-right: 20rpx;
+}
+
+.gongxikuai {
+  width: 660rpx;
+}
+
+.date {
+  font-size: 10pt;
+  color: #595959;
+}
+
+.date1 {
+  font-size: 10pt;
+  color: #adadad;
+}
+
+.riqikuai {
+  padding-left: 10rpx;
+  padding-top: 20rpx;
+  font-size: 13px;
+  border-bottom: 1px dashed #bbb;
+  padding-bottom: 20rpx ;
+}
+
+.footer1 {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left1 {
+  background: #f54751;
+  height: 90rpx;
+  line-height: 80rpx;
+  flex-grow: 119;
+  text-align: center;
+  /* font-size: 16px; */
+  color: white;
+  /* font-weight: bold; */
+  font-family: '微软雅黑';
+  font-size: 16px;
+}
+
+.footer1 view:first-child {
+  background: #f54751;
+  /* height: 90rpx;
+       line-height: 80rpx; */
+  flex-grow: 119;
+  text-align: center;
+  /* font-size: 16px; */
+  color: white;
+  /* font-weight: bold; */
+  font-family: '微软雅黑';
+  font-size: 16px;
+  width: 81%;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 无消息 */
+
+.wuxiaoxi {
+  width: 100%;
+  margin-top: 20%;
+  text-align: center;
+}
+
+.xiaoxi-ziti {
+  font-size: 15px;
+  color: #595959;
+  font-family: "微软雅黑";
+}
+
+.dibiao {
+  font-size: 12pt;
+  color: #d7d7d7;
+  padding-top: 60rpx;
+}
+
+.dibiao1 {
+  bottom: 110rpx;
+  position: fixed;
+  font-size: 9pt;
+  color: blue;
+  /* padding-top: 159rpx; */
+  border-bottom: 1px solid blue;
+  text-align: center;
+}
+
+.xieyi {
+  bottom: -20rpx;
+  position: fixed;
+  z-index: 10000;
+}
+
+.msgBlock {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  margin-top: 15rpx;
+}
+.xiaoxikuai {
+   display: flex;
+    display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}

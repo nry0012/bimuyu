@@ -1,0 +1,67 @@
+<!--pages/withdrawAct/withdrawAct.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<view class="content">
+	<view class="header">
+		<view class="headerTitle">钱包余额
+		</view>
+		<view class="headerAmount">{{amount}}<text class="headerAmountUnit">元</text>
+		</view>
+	</view>
+	<view class="withdraw">
+		<view class="withdrawTitle">定额提取
+		</view>		
+		<view class="withdrawL1">
+			<view class="{{jeSel==50?'withdraw50-sel':'withdraw50'}}" id="50" bindtap='amountSel'>￥50
+			</view>		
+			<view class="{{jeSel==100?'withdraw50-sel':'withdraw50'}}" id="100" bindtap='amountSel'>￥100
+			</view>		
+			<view class="{{jeSel==200?'withdraw50-sel':'withdraw50'}}" id="200" bindtap='amountSel'>￥200
+			</view>		
+		</view>		
+		<view class="withdrawL1">
+			<view class="{{jeSel==500?'withdraw50-sel':'withdraw50'}}" id="500" bindtap='amountSel'>￥500
+			</view>		
+			<view class="{{jeSel==1000?'withdraw50-sel':'withdraw50'}}" id="1000" bindtap='amountSel'>￥1000
+			</view>		
+			<view class="{{jeSel==1500?'withdraw50-sel':'withdraw50'}}" id="1500" bindtap='amountSel'>￥1500
+			</view>	
+		</view>
+		<view class="withdrawL1">
+			<view class="{{jeSel==0?'withdrawAll-sel':'withdrawAll'}}" id="0" bindtap='amountSel'>ALL
+			</view>	
+		</view>		
+	</view>
+	<view class="upgrade">
+		<view class="withdrawTitle">会员升级年费
+		</view>		
+		<view class="upgradeAmount">
+			<view class="{{lvSel==29?'upgradeCronzeVal-sel':'upgradeCronzeVal'}}" id="29" bindtap='levelSel'>￥29
+			</view>		
+			<view class="{{lvSel==59?'upgradeCronzeVal-sel':'upgradeCronzeVal'}}" id="59" bindtap='levelSel'>￥59
+			</view>		
+			<view class="{{lvSel==99?'upgradeCronzeVal-sel':'upgradeCronzeVal'}}" id="99" bindtap='levelSel'>￥99
+			</view>	
+		</view>		
+		<view class="upgradeAmount">
+			<view class="{{lvSel==29?'upgradeCronzeText-sel':'upgradeCronzeText'}}">-青铜-
+			</view>		
+			<view class="{{lvSel==59?'upgradeCronzeText-sel':'upgradeCronzeText'}}">-白银-
+			</view>		
+			<view class="{{lvSel==99?'upgradeCronzeText-sel':'upgradeCronzeText'}}">-黄金-
+			</view>			
+		</view>
+	</view>
+	<view class="illustrator">
+	<text class="illText">
+	提现说明：\n
+1.会员提现799元以上须交纳个人所得税0.3%；
+2.提现会在3-5个工作日内到账，请耐心等待；
+3.每次提现第三方合作平台均会扣除0.6%的手续费；
+4.申请提现成功后请注意查收微信钱包金额变化。
+	</text>
+	</view>
+	<view class="bottom" bindtap="withdraw">{{buttonText}}
+	</view>
+</view>

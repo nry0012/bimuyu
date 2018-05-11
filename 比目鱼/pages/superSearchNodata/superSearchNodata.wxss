@@ -1,0 +1,13 @@
+/* user.wxss */
+@import "../../component/title/title.wxss";
+.container{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.tu{
+  width: 750rpx;
+  height: 2122rpx;
+}

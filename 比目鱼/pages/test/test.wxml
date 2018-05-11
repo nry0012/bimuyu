@@ -1,0 +1,3 @@
+<import src="../../component/title/title.wxml" />
+
+<template is="compTitle" data="{{ ...comTitle}}"/>

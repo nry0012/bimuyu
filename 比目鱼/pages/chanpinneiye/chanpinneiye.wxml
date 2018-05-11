@@ -1,0 +1,253 @@
+<!--chanpinneiye.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<import src="../../component/title/title.wxml" />
+
+<view class="container" style="{{hasMask?'position:fixed;':''}}">
+<template is="compTitle" data="{{ ...comTitle}}" />
+
+  <view class="top">
+    <view style='height:730rpx;'>
+      <image src="{{goodsdata.pic_url}}" class="chanpin"></image>
+      <view class='avatar'>
+        <view class='avatar-top'>
+          <image src="../image/home.png" class="avatar_home" bindtap="shouye" wx:if="{{isShare==0}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="top_1">
+
+      <view class="goodsPrice">
+        <view class="goodsPriceInfo">
+          <view class="goodsPriceInfoItem">
+            <view class="goodsPriceAfter">
+              ￥
+              <text class="goodsCouponPrice">{{goodsdata.coupon_price}}</text>
+            </view>
+            <view class="goodsPriceBefore">原价：￥
+              <text class="goodsPriceBeforeText">{{goodsdata.price}}</text>
+            </view>
+          </view>
+          <view class="goodsPriceImg">
+            <image class="goodsPriceImgItem" src="../image/goodsCouponPrice.png"></image>
+          </view>
+        </view>
+        <view class="goodsShare">
+          <image class="goodsShareImg" src="../image/turn.png"></image>
+        </view>
+      </view>
+
+      <view class="goodsTitle1">
+        <view class="goodsTitleItem">
+          <image class="goodsSourceImg" src="../image/taobaoBig.png" wx:if="{{goodsdata.shop_type=='C'}}"></image>
+          <image class="goodsSourceImg" src="../image/jingdongBig.png" wx:if="{{goodsdata.shop_type=='D'}}"></image>
+          <image class="goodsSourceImg" src="../image/tmallBig.png" wx:if="{{goodsdata.shop_type=='B'}}"></image>
+          <text class="goodsTitleItemDetail">{{goodsdata.title}}</text>
+        </view>
+        <view class="goodsVolume">
+          <view class="goodsQuan1">
+            <image class="goodsQuanImg" src="../image/quanfuhao.png"></image>
+            <text class="goodsQuanText">￥{{goodsdata.quan}}元</text>
+          </view>
+          <view class="goodsVolumeItem">
+            已售{{goodsdata.volume}}件
+          </view>
+        </view>
+      </view>
+      <!--
+      <view class="hengxiang_name">
+        <view class='hengxiang-left'>
+          <image class="laiyuan" src="../image/taobao.png" wx:if="{{goodsdata.shop_type=='C'}}"></image>
+          <image class="laiyuan" src="../image/jingdong.png" wx:if="{{goodsdata.shop_type=='D'}}"></image>
+          <image class="laiyuan" src="../image/tianmao.png" wx:if="{{goodsdata.shop_type=='B'}}"></image>
+          <text class="goodsname1">{{goodsdata.title}}</text>
+        </view>
+        <view>
+        </view>
+        <view class='hengxiang-right'>
+          <button open-type="share" class='fenxiang'></button>
+          <image src='../image/turn.png' class='turn-image' bindtap="lingquan"></image>
+        </view>
+      </view>
+
+      <view class="chanpinxinxi1">
+        <view class="juzuo1">
+          <image src='../image/quanhoujia.png' class='quanhoujiatu' wx:if="{{goodsdata.source!=4}}"></image>
+          <image src='../image/douyin-renqi.png' class='quanhoujiatu' wx:if="{{goodsdata.source==4}}"></image>
+          <text class="originalPrice2">{{goodsdata.coupon_price}}</text>
+        </view>
+        <view class="juyou1">
+         
+          <text class='quantu1' wx:if="{{goodsdata.source!=4}}">优惠券：</text>
+          <text class='youhuijie' wx:if="{{goodsdata.source!=4}}"> {{goodsdata.quan}}元</text>
+          <image src='../image/douyin-baokuan.png' class='douyinbaokuan' wx:if="{{goodsdata.source==4}}"></image>
+        </view>
+      </view>
+      <view class="chanpinxinxi1">
+        <view class="juzuo1">
+          <text class="yuanjia">原价：</text>
+          <text class="yuanjia1">{{goodsdata.price}}</text>
+        </view>
+
+        <view class="juyou1">
+          <text class="yuanjia">已售：</text>
+          <text class="xiaoliang">{{goodsdata.volume}}</text>
+        </view>
+      </view> 
+-->
+    </view>
+    <view class='huisejianju'></view>
+    <view class='baozheng'>
+      <image src='../image/baozheng.png' class='baozheng-img'></image>
+    </view>
+    <view class='huisekuan'></view>
+    <view class='huisekuai' wx:if="{{renwushenfen==1}}">
+      <view class='kuai1'>
+        <view class='kuai1-left1'>
+          <image src='../image/tuiguangtu.png' class='tuiguang-img'></image>
+        </view>
+        <view class='kuai1-right'>
+          <view class='yongjin'>推广预计佣金:￥{{goodsdata.usercommission}}</view>
+        </view>
+      </view>
+
+      <view class='kuai1'>
+        <view class='kuai1-left'>
+          <!-- <image src='../image/tuiguangtu.png' class='tuiguang-img'></image> -->
+        </view>
+        <view class='kuai1-right2'>
+          <view class='shengji'>升级为更高级段位，可以得更多~</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom">
+    <view class="goods-info">
+      <!-- 注释部分为：查看图文详情按钮 -->
+      <!-- <view class="show-detail" bindtap="hideDetail">
+        <text class="detail">查看图文详情</text>
+        <view animation="{{animationData}}">▲</view>
+      </view> -->
+      <view class="show-detail" bindtap="hideDetail">
+        <image src='../image/chakantuwen.png' class='chakantuwen'></image>
+      </view>
+      <view class='huisekuan'></view>
+      <!-- 此句显示京东商品内页中，查看商品详情的位置，淘宝及其他不显示 -->
+
+    </view>
+    <block wx:for="{{goods_image}}" wx:key="item.id" wx:if="{{jingdong!=0}}">
+      <view class="xiangqing2">
+        <view class="goods-image" wx:if="{{show}}">
+          <image src="{{item.goodsimage}}" mode="widthFix" class="xiangqing"></image>
+        </view>
+      </view>
+    </block>
+    <view class='more-text' wx:if="{{goodsdata.shop_type=='D'}}">
+      <text class='jd-text'>京东优惠券领取方式：</text>
+      <text class='jd-text'>1、查看京东优惠券，点击“领券购买”，在出现的客服消息中输入JD，唤醒京东小秘书(因为京东小秘书比较害羞，要先请你和她打招呼)</text>
+      <text class='jd-text'>2、返回上一步</text>
+      <text class='jd-text'>3、再次点击“领券购买”</text>
+      <text class='jd-text'>4、可以安心领券了</text>
+      <text class='jd-text'>by、如果京东小秘书又不理睬你了，还是用上述方式，先要输入JD哟。如想了解更多商品详细信息，请先领取优惠券后，再前往京东相关商户中查看即可.</text>
+    </view>
+
+    <view class="yansghi1">
+      <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/goodsPage.png" class="liucheng"></image>
+    </view>
+    <view class="yangshi">
+      <image src="../image/dixian.png" class="dixian"></image>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="footer-left1">
+      <text class="shoujia1">￥{{goodsdata.coupon_price}}</text>
+      <text class="quanhoujia1">券后</text>
+    </view>
+    <view class="footer-right2">
+      <image src="../image/ditu.png" class="ditu-img"></image>
+    </view>
+    <view class="huobisanjia1" bindtap="huobisanjia"></view>
+    <!--    <button class="lingquangoumai1" open-type="contact" session-from="Goods,{{goodsdata.id}},ParentID,{{parent}}" wx:if="{{goodsdata.shop_type=='D'}}"></button> -->
+    <button class="lingquangoumai1" bindtap='jdPurchase' wx:if="{{goodsdata.shop_type=='D'}}"></button>
+    <button class="lingquangoumai1" bindtap="showModal1" wx:if="{{goodsdata.shop_type!='D'}}"></button>
+    <button class="lingquangoumai1" wx:if="{{!goodsdata.shop_type}}"></button>
+
+    <!-- <view class="footer-left" bindtap="huobisanjia">货比三家</view> -->
+    <!-- <view class="footer-right">
+      <button class="goumaianniu" open-type="contact" session-from="Goods,{{goodsdata.id}}" wx:if="{{goodsdata.shop_type=='D'}}">
+        领券购买
+      </button>
+      <button class="goumaianniu" bindtap="showModal1" wx:if="{{goodsdata.shop_type!='D'}}">
+        领券购买
+      </button>
+    </view> -->
+  </view>
+  <!-- 遮罩层显示 -->
+  <view class="commodity_screen1" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
+  <view class="commodity_attr_box1" wx:if="{{showModalStatus1}}">
+    <view class="alert">
+      <text class="success">温馨提示</text>
+      <text class="taokouling">成功复制淘口令，打开手机淘宝app即可下单</text>
+      <view class="footer1">
+        <view class="footer-left1" bindtap="jiaocheng">
+          查看教程
+        </view>
+        <view class="footer-right1" bindtap="doPurchase">
+          朕知道了
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 纠错弹框 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen3" wx:if="{{showModalStatus3}}"></view>
+<view animation="{{animationData3}}" class="commodity_attr_box3" wx:if="{{showModalStatus3}}">
+  <view class="alert3">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/jiaodui.png' class='jiaodui'></image>
+    <view class='guanbiquyu' bindtap='hideModal3'></view>
+    <view class='tijiaoquyu' bindtap='correct'></view>
+    <view class='alert-content'>
+      <view class='fuxuankuang'>
+        <checkbox-group bindchange="checkboxChange" class="checkbox-group">
+          <label class="checkbox" wx:for="{{items}}" wx:key="{{item:id}}">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </checkbox-group>
+      </view>
+      <view class='danxuankuang'>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{items1}}" wx:key="{{item:id}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" class='radio-style' />{{item.value}}
+          </label>
+        </radio-group>
+      </view>
+
+    </view>
+    <!-- <view class='guanbi1'>
+      <image src='../image/guanbi1.png' class='guanbi-img' bindtap='hideModal3'></image>
+    </view>
+    <view class='alert-title'>商品信息校对</view>
+    <view class='fuxuankuang'>
+      <checkbox-group bindchange="checkboxChange" class="checkbox-group">
+        <label class="checkbox" wx:for="{{items}}">
+          <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+    <view class='danxuankuang'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items1}}">
+          <radio value="{{item.name}}" checked="{{item.checked}}" class='radio-style' />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view>
+      <image src='../image/tijiao.png' class='tijiao-img'></image>
+    </view> -->
+
+  </view>
+</view>

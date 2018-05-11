@@ -1,0 +1,91 @@
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<view class="content">
+  <view class="header">
+    <view class="userAvatar">
+      <image src="{{userInfo.avatarUrl}}" class="userAvatarImg" style="vertical-align:middle;"></image>
+    </view>
+    <view class='userNickname'>
+      <text>{{userInfo.nickName}}</text>
+      <image src="../image/member_male.png" wx:if="{{userInfo.gender==1}}" class="gender"></image>
+      <image src="../image/member_female.png" wx:if="{{userInfo.gender!=1}}" class="gender"></image>
+    </view>
+    <view class='agentLevel'>
+      <image src="../image/member_common.png" wx:if="{{agentLevel==1}}" class='agentLevelImg'></image>
+      <image src="../image/member_bronze.png" wx:if="{{agentLevel==2}}" class='agentLevelImg'></image>
+      <image src="../image/member_silver.png" wx:if="{{agentLevel==3}}" class='agentLevelImg'></image>
+      <image src="../image/member_golden.png" wx:if="{{agentLevel==4}}" class='agentLevelImg'></image>
+    </view>
+    <view class='familys'>
+      <text>- 家族成员{{members}}人 -</text>
+    </view>
+    <view class='bonus' bindtap='bonusGetShow' wx:if="{{isBonus==1}}">
+      <image src="../image/bonusInvite.png"  class='bonusImg'></image>
+    </view>
+  </view>
+  <view class="members">
+    <block wx:for="{{staffs}}" wx:for-index="index" wx:key="{{item.userID}}">
+    <view class="staffs">
+      <view class="sons">
+        <view class="sonAvatar">
+          <image src="{{item.userAvataUrl}}" class='sonAvatarImg'></image>
+        </view>
+
+        <view class="sonInfo">
+          <view class="sonName" style='color:{{item.gender!=1?"#F54751":"#5CD9FA"}}'>
+            <text>{{item.userNickName}}</text>
+            <image src="../image/member_male.png" wx:if="{{item.gender==1}}" class="gender"></image>
+            <image src="../image/member_female.png" wx:if="{{item.gender!=1}}" class="gender"></image>
+          </view>
+          <view class="sonLevel">
+            <image src="../image/member_common.png" wx:if="{{item.agentLevel==1}}" class='agentLevelImg'></image>
+            <image src="../image/member_bronze.png" wx:if="{{item.agentLevel==2}}" class='agentLevelImg'></image>
+            <image src="../image/member_silver.png" wx:if="{{item.agentLevel==3}}" class='agentLevelImg'></image>
+            <image src="../image/member_golden.png" wx:if="{{item.agentLevel==4}}" class='agentLevelImg'></image>
+            <text class='familyText'>家族成员{{item.lowers}}人</text>
+          </view>
+          <view class="sonRegisterDate">
+            <text>成功申请会员  {{item.payTime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="separator">
+      </view>
+      <view class="grandsons">
+        <view class="noGrandson" wx:if="{{item.lowers==0}}">
+          <text class="noGrandsonText">- 当前家族还没有小伙伴助力 -</text>
+        </view>
+        <view class="hasGrandsons" wx:if="{{item.lowers>0}}">
+          <block wx:for="{{item.lowList}}" wx:for-index="index" wx:key="{{item.userID}}">
+            <view class="grandsonAvatar">
+              <image class="grandsonAvatarImg" src="{{item.userAvataUrl}}" ></image>
+            </view>
+          </block>
+        </view>
+      </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!--  登陆红包弹窗 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen" wx:if="{{bonusGetStatus}}"></view>
+<view animation="{{animationData2}}" class="commodity_attr_box" wx:if="{{bonusGetStatus}}">
+
+    <view class="alert-erweima">
+      <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/bonusNew.png" class="popupImg" bindtap="bonusGetHide" ></image>
+
+      <!-- <text class="hongbaojine1">￥{{bonus}}</text> -->
+      <!-- <text class="hongbaoming">财源广进</text> -->
+      <view class="popView">
+      <view class='popBonus'>￥ {{bonus}}</view>
+      <view class='popTime'>记录时刻 {{bonusjilu}}</view>
+      <view class="popButton">
+        <image src='../image/zhenzhidaole.png' class='popButton' bindtap="bonusGetHide"></image>
+      </view>
+      <!-- <text class="nickname1">{{userInfo.nickName}}</text>  -->
+    </view>
+  </view>
+</view>

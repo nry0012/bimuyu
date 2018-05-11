@@ -1,0 +1,288 @@
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+<import src="../../component/title/title.wxml" />
+
+<view class="content">
+<!-- <template is="compTitle" data="{{ ...comTitle}}" /> -->
+  <!-- <image src="../image/mine_header.png"></image> -->
+  
+  <view class="header" style="background:url('../image/mine_header.png') no-repeat;background-size:cover">
+    
+    <view class="useravatar">
+      <image class="useravatarImg" src="{{userInfo.avatarUrl}}" wx:if="{{userLevel!=6}}"></image>
+      <image class="useravatarImg" src="../image/bimuyu.png" wx:if="{{userLevel==6}}"></image>
+    </view>
+    <view class="userinfo">
+      <view class="userName">
+        <view class="userNameText">{{userInfo.nickName}}
+        </view>
+        <view class="userGender">
+          <image src="../image/member_male.png" wx:if="{{userInfo.gender==1}}" class="gender"></image>
+          <image src="../image/member_female.png" wx:if="{{userInfo.gender!=1}}" class="gender"></image>
+        </view>
+      </view>
+      <view class="userStatus">
+        {{userStatusFull}}
+      </view>
+      <view class="userTrace">
+        <button class="userTraceButton" bindtap="userTrace" wx:if="{{isAuth==1}}">我的足迹</button>
+        <button class="userTraceButton" bindtap="userAuth" wx:if="{{isAuth==0}}">信息授权</button>
+      </view>
+    </view>
+    
+    <view class="arrow" bindtap="memberCenter">
+      <image class="arrowImg" src="../image/message_open.png"></image>
+    </view>
+  </view>
+  <view class='graybg'></view>
+  <template is="compTitle" data="{{ ...comTitle}}" />
+  
+  <view class="worthy">
+    <view class="worthyTitle">
+      <!-- <view class="myWorthy">我的权益</view> -->
+      <!-- <view class="levelHeaderUpgrade" id="1" bindtap='memberUpgrade' wx:if="{{isUpdate==1}}">可升级</view> -->
+      <view class="worthyHint">| 如下内容均可点击查看</view>
+    </view>
+    <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#ff6666" autoplay="true" class="swiper">
+     <block wx:for="{{worthys}}" wx:for-index="index" wx:key="{{item.id}}">
+    <swiper-item class="swiperItem">
+     <view class='worthyContent'>
+      <view class="worthyCount">
+        <view class="worthyUserStatus">{{userStatus}}</view>
+        <view class="worthyCountText">| 当前已享
+          <text style="color:red">{{worthyCount}}</text> 项权益
+        </view>
+        <button class='kaitong_button' bindtap='openInvite' wx:if="{{memberP==1}}" hidden="{{btn_vip}}">免费升级</button>
+        <button class='kaitong_button' bindtap='vipBuy'  wx:if="{{memberP==2}}" hidden="{{btn_vip}}">开通会员</button>
+        <button class='kaitong_button' bindtap=''  wx:if="{{memberP==3}}" hidden="{{btn_vip}}">请先授权</button>
+      </view>
+      <view class="worthyTags">
+        <block wx:for="{{item.worthy}}" wx:for-index="index" wx:key="{{item.wtID}}">
+          <view class="worthyTagItem" bindtap="worthyClick" id="{{item.DID}}" wx:if="{{item.IID<4}}">
+            <view class="worthyTagItemImgs">
+              <image class="worthyTagItemImg" src="{{item.wtPic}}" wx:if="{{item.lwState==1}}"></image>
+              <image class="worthyTagItemImg" src="../image/noAuth.png" wx:if="{{item.lwState==0}}"></image>
+              <button class="contact-button" open-type="contact" session-from="advice" wx:if="{{item.wtDealType==4}}"> </button>
+            </view>
+            <view class="worthyTagItemText">
+              <view class='msgAlert' wx:if="{{item.msgState==1 && item.lwState==1}}"></view>
+              <view class='msgTitle' style="{{item.lwState==0?'color:#9F9F9F':''}}">{{item.wtName}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="worthyTags">
+        <block wx:for="{{item.worthy}}" wx:for-index="index" wx:key="{{item.wtID}}">
+          <view class="worthyTagItem" bindtap="worthyClick" id="{{item.DID}}" wx:if="{{item.IID>=4}}">
+            <view class="worthyTagItemImgs">
+              <image class="worthyTagItemImg" src="{{item.wtPic}}" wx:if="{{item.lwState==1}}"></image>
+              <image class="worthyTagItemImg" src="../image/noAuth.png" wx:if="{{item.lwState==0}}"></image>
+              <button class="contact-button" open-type="contact" session-from="advice" wx:if="{{item.wtDealType==4}}"> </button>
+            </view>
+            <view class="worthyTagItemText">
+              <view class='msgAlert' wx:if="{{item.msgState==1 && item.lwState==1}}"></view>
+              <view class='msgTitle' style="{{item.lwState==0?'color:#9F9F9F':''}}">{{item.wtName}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+      </view>
+    </swiper-item>
+       </block>
+    </swiper>
+  </view>
+  <!--
+  <view class="level">
+    <view class="levelTitle">
+      <view class="myLevel">我的等级</view>
+      <view class="levelIllustrator" bindtap="levelDeclare">
+        <image class="levelIllustratorImg" src="../image/wenhao.png"></image>
+      </view>
+    </view>
+    <view class="levelContent">
+      <view class="levelDeclare">成功申请为会员，才可以进行段位升级</view>
+      <view class="levelEmblem">
+        <block wx:for="{{levels}}" wx:for-index="index" wx:key="{{item.id}}">
+          <view class="levelEmblemItem" bindtap="emblemSel" id="{{item.id}}" wx:if="{{item.id>0}}">
+            <view class="levelEmblemItemImgs">
+              <image class="levelEmblemImg" src="{{item.emblemImg}}"></image>
+            </view>
+            <view class="levelEmblemItemText">{{item.emblemFee}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="FeeIllustrator">
+        <image class="FeeIllustratorImg" src=""></image>
+      </view>
+      <view class="signup" bindtap="signup">
+        <image class="signupImg" src="../image/signUp.png"></image>
+      </view>
+      <view class="signInDeclare">- 请选择你要开通会员的段位 -</view>
+    </view>
+  </view>
+-->
+  <!--
+  <view class="levelContent" wx:if="{{userLevel>0&&userLevel<6}}">
+    <view class="levelHeader">
+      <view class="levelHeaderTitle">当前等级段位为：</view>
+      <view class="levelHeaderName">{{lvName1}}</view>
+      <view class="levelHeaderUpgrade" bindtap='openMember' wx:if="{{isUpdate==1}}">可升级</view>
+    </view>
+    <view class="progress">
+      <view class="levelcontentText">邀请会员数：</view>
+      <view class="progressInvite">
+        <progress class="progressBody" percent="{{Pinvite}}" activeColor="#F54751" stroke-width="17" backgroundColor='#E5E5E5' />
+        <text class="progressText">{{invites}}/{{Qinvite}}</text>
+      </view>
+      <view class="levelcontentText">引流人数：</view>
+      <view class="progressInvite">
+        <progress class="progressBody" percent="{{Pflow}}" activeColor="#f5A623" stroke-width="17" backgroundColor='#E5E5E5' />
+        <text class="progressText">{{flows}}/{{Qflow}}</text>
+      </view>
+      <view class="levelcontentText">订单数：</view>
+      <view class="progressInvite">
+        
+        <progress class="progressBody" percent="{{Porder}}" stroke-width="17"  activeColor="#417505" backgroundColor="#E5E5E5"  />
+        
+        <text  class="progressText">{{orders}}/{{Qorder}}</text>
+      </view>
+    </view>
+    <view class="levelIllustrate">
+      <text>
+			14个工作日范围内可续费补差升级，14个工作日之外再升级需全额。\n
+			普通会员升级其它段位，只能补交全额，无补差。\n
+			30日内无完成任务的段位会员会自动降级为上一等级。
+		</text>
+    </view>
+  </view>
+  -->
+  <view class='expImg' id="2" bindtap='openMember' wx:if="{{userLevel==0||userLevel==6}}">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/experience.png' class='expImg'></image>
+  </view>
+
+  <view class="favorateImg" bindtap="Apptest">
+    <image src='../image/cainixihuan.png' class='xihuan-img'></image>
+  </view>
+
+  <view class="cainixihuan">
+    <view class="bottom1">
+      <view class="left">
+        <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+          <view wx:if="{{item.iid % 2 == 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+            <view class='goodsImg'>
+              <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+              <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                自购预计再返：{{item.usercommission}}
+              </view>
+            </view>
+            <view class="goodsTitle">
+              <view class="goodsSourceIcon">
+                <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+              </view>
+              <text class="goodsTitleText">{{item.title}}</text>
+            </view>
+            <view class="view-op">
+              <view class="goodsCPrice">
+                <text class="goodsCPriceText">券后:</text>
+                <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+              </view>
+              <view class="goodsVolume">
+                <text class="goodsVolumeText">已售：</text>
+                <text class="goodsVolumeValue">{{item.volume}}</text>
+              </view>
+            </view>
+            <view class="view-op2">
+              <view class="goodsOPrice">
+                <text class="goodsOPriceText">原价：</text>
+                <text class="goodsOPriceValue">{{item.price}}</text>
+              </view>
+              <view class="goodsQuan">
+                <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                <view class="goodsQuanValue">{{item.quan}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="right">
+        <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+          <view wx:if="{{item.iid % 2 != 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+            <view class='goodsImg'>
+              <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+              <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                自购预计再返：{{item.usercommission}}
+              </view>
+            </view>
+            <view class="goodsTitle">
+              <view class="goodsSourceIcon">
+                <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+              </view>
+              <text class="goodsTitleText">{{item.title}}</text>
+            </view>
+            <view class="view-op">
+              <view class="goodsCPrice">
+                <text class="goodsCPriceText">券后:</text>
+                <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+              </view>
+              <view class="goodsVolume">
+                <text class="goodsVolumeText">已售：</text>
+                <text class="goodsVolumeValue">{{item.volume}}</text>
+              </view>
+
+            </view>
+            <view class="view-op2">
+              <view class="goodsOPrice">
+                <text class="goodsOPriceText">原价：</text>
+                <text class="goodsOPriceValue">{{item.price}}</text>
+              </view>
+              <view class="goodsQuan">
+                <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                <view class="goodsQuanValue">{{item.quan}}</view>
+              </view>
+
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--  登陆红包弹窗 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen1" wx:if="{{showBonusLoadingStatus}}"></view>
+<view animation="{{animationData7}}" class="commodity_attr_box1" wx:if="{{showBonusLoadingStatus}}">
+  <view class="alert-erweima">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/bonusNew.png' class='popupImg'></image>
+    <view class="popView">
+<!--      <view class='touxiang-img1'>
+        <image src="{{userInfo.avatarUrl}}" class="popAvatar"></image>
+      </view> -->
+      <view class='popBonus'>￥ {{bonus}}</view>
+      <view class='popTime'>记录时刻 {{bonusjilu}}</view>
+      <view class="popButton">
+        <image src='../image/zhenzhidaole.png' class='popButton' bindtap="hideBonusLoading"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--  登陆红包弹窗 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen1" wx:if="{{showPageLoadingStatus}}"></view>
+<view animation="{{animationData7}}" class="commodity_attr_box1" wx:if="{{showPageLoadingStatus}}">
+  <view class="pageLoad">
+    请返回首页推荐，待完成首页加载后再进入此页面
+  </view>
+</view>
+
+<!--邀请好友 免费升级 遮罩层 -->
+<view class="full_bg"  hidden="{{flag1}}">
+  <image src='../image/full_bg.png'></image>
+    <button id="btn_invite" bindtap="onShareAppMessage"> </button>
+    <button id="btn_close" bindtap='closeInvite'></button> 
+</view>

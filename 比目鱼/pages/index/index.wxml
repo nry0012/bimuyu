@@ -1,0 +1,284 @@
+<!--index.wxml-->
+
+<view class="container" style="{{hasMask?'position:fixed;':''}}">
+  <view class='banner'>
+ <!--   <view class="tuijian1">
+      <block wx:for="{{goodsdata3}}" wx:key="item.colID" class="dingbu">
+        <view id="{{item.colID}}" bindtap="navClick" class="{{item.colID==CheckItem?'is_checked1':'normal1'}} {{CheckItem==0&&index==0?'is_checked1':'normal1'}}">
+          {{item.colName}}
+        </view>
+      </block>
+      <view class='top-img'>
+        <image src='../image/more.png' class="more-img" bindtap='showModal3'></image>
+      </view>
+    </view>
+-->
+  </view>
+  <view class="top">
+    <scroll-view style="height:94vh;" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="jiazhaigengduo">
+      <view class="top_1">
+        <swiper indicator-dots="true" indicator-color="rgba(255,255,255,.3)" indicator-active-color="#ff6666" autoplay="true" class="swiper">
+          <block wx:for="{{banners}}" wx:for-index="index" wx:key="{{item.picSort}}">
+            <swiper-item style="margin-top:-1px;">
+              <image src="{{item.picUrl}}" style="height:100%" class="slide-image" mode="aspectFit" data-name="{{item.picSearchName}}" id="{{item.picSort}}" bindtap="bannerClick" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="baisekuai">
+          <image src="../image/sousuotu.png" bindtap="superSearch" class="fangdajing"></image>
+        </view>
+      </view>
+      <view class="baozheng">
+        <image class="baozheng-img" src="../image/baozheng.png"></image>
+      </view>
+      <view class='huitiao'></view>
+      <view class="dibukuai">
+        <view class="hengxiang">
+          <block wx:for="{{specialChannel}}" wx:key="item.picSort">
+
+            <view class="zongxiang1" bindtap="specialChannelClick" data-name="{{item.picSearchName}}" id="{{item.picParentID}}">
+              <view class='tu-weizhi'>
+                <image src="{{item.picUrl}}" class="tu"></image>
+              </view>
+              <text class="zhonglei" class="fenleiziti">{{item.picName}}</text>
+            </view>
+          </block>
+
+        </view>
+        <view class='expImg' bindtap='GetRP' wx:if="{{userLevel==0}}">
+          <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/experience.png' class="expImg"></image>
+        </view>
+        <view class="tuijian_tu">
+          <view class="zuocetu">
+            <image src="{{hotArea[0].picUrl}}" class="tu_01" data-name="{{hotArea[0].picSearchName}}" id='{{hotArea[0].picParentID}}' bindtap="activity"></image>
+          </view>
+          <view class="youce">
+            <image src="{{hotArea[1].picUrl}}" class="tu_02" data-name="{{hotArea[1].picSearchName}}" id="{{hotArea[1].picParentID}}" bindtap="activity"></image>
+            <view class="hengxiangtu">
+              <image src="{{hotArea[2].picUrl}}" class="tu_03" data-name="{{hotArea[2].picSearchName}}" id="{{hotArea[2].picParentID}}" bindtap="activity"></image>
+              <image src="{{hotArea[3].picUrl}}" class="tu_04" data-name="{{hotArea[3].picSearchName}}" id="{{hotArea[3].picParentID}}" bindtap="activity"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <image src="../image/shouye.png" class="huishouye1" bindtap="goTop" wx:if="{{totype==1}}"></image>
+      <!--
+      <view class='jingdong' bindtap="activity" data-name="京东" id="18">
+        <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/area-jd.png' class='xianshi-img'></image>
+      </view>
+      <view class='jingdongquyu'>
+        <block wx:for-items="{{jdgoods}}" wx:key="{{item.id}}">
+          <view class="content-neirong" bindtap="showGoods" id="{{item.id}}">
+            <view class='neirong-left'>
+              <image src="{{item.pic_url}}" class='chanpin-img'></image>
+            </view>
+            <view class='neirong-right'>
+              <view class='right-title'>
+                {{item.title}}
+              </view>
+              <view class="chanpinxinxi1-1">
+                <view class="juzuo1-1">
+                  <view class="laiyuan">
+                    <image class="laiyuan" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                    <image class="laiyuan" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                    <image class="laiyuan" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                  </view>
+                </view>
+                <view class="juyou1-1">
+                  <text class="right-quanhou">券后￥</text>
+                  <text class="right-quanhou1">{{item.coupon_price}}</text>
+                </view>
+
+              </view>
+              <view class="chanpinxinxi1-1">
+                <view class="juzuo1">
+                  <text class="yuanjia">原价:</text>
+                  <text class="yuanjia1">{{item.price}}</text>
+                </view>
+                <view class="juyou1">
+                  <text class="left-yuanjia">已售:</text>
+                  <text class="right-xiaoliang">{{item.volume}}</text>
+                </view>
+              </view>
+
+              <view class='right-anniu'>
+                <image src='../image/anniu.png' class='anniu-img'></image>
+              </view>
+
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class='chankangengduo' bindtap="activity" data-name="京东" id="18">
+        <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/more-jd.png' class='chakangengduo-img'></image>
+      </view>
+      -->
+      <view class='jingdong'>
+        <view class="jdTitle">
+          <view class="jdTitleLeft">
+            <image class="jdTitleLeftImg" src="../image/jdPicLeft.png"></image>
+          </view>
+          <view class="jdTitleRight" bindtap="activity" data-name="京东" id="18">
+            <image class="jdTitleRightImg" src="../image/jdPicRight.png"></image>
+          </view>
+        </view>
+        <view class="jdScroll">
+          <scroll-view class="recommend_scroll_x_box" scroll-x="true" style="overflow : auto; z-index: 10000;">
+            <view class='jdScrollItem'>
+              <block wx:for="{{jdgoods}}" wx:for-index="index" wx:key="{{item.id}}">
+                <view class="jdBlock" bindtap="showGoods" id="{{item.id}}">
+                  <view class="jdPic">
+                    <image class="jdPicImg" src="{{item.pic_url}}"></image>
+                  </view>
+                  <view class="jdCPrice">
+                    ￥{{item.coupon_price}}
+                  </view>
+                  <view class="jdOPrice">
+                    ￥{{item.price}}
+                  </view>
+                </view>
+              </block>
+
+              <view class="jdMore" bindtap="activity" data-name="京东" id="18">
+                <text class='jdMoreText'>更多</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+      <view class='bottom-tuijian'>
+        <image src='../image/tuijian.png' class='tuijian-img'></image>
+      </view>
+      <view class="bottom1_1" style="{{hasMask?'display:none;':''}}">
+        <view class="bottom1">
+          <view class="left">
+            <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+              <view wx:if="{{item.iid % 2 == 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+                <view class='goodsImg'>
+                  <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+                  <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                    自购预计再返：{{item.usercommission}}
+                  </view>
+                </view>
+                <view class="goodsTitle">
+                  <view class="goodsSourceIcon">
+                    <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                    <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                    <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                  </view>
+                  <text class="goodsTitleText">{{item.title}}</text>
+                </view>
+                <view class="view-op">
+                  <view class="goodsCPrice">
+                    <text class="goodsCPriceText">券后:</text>
+                    <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+                  </view>
+                  <view class="goodsVolume">
+                    <text class="goodsVolumeText">已售：</text>
+                    <text class="goodsVolumeValue">{{item.volume}}</text>
+                  </view>
+
+                </view>
+                <view class="view-op2">
+                  <view class="goodsOPrice">
+                    <text class="goodsOPriceText">原价：</text>
+                    <text class="goodsOPriceValue">{{item.price}}</text>
+                  </view>
+                  <view class="goodsQuan">
+                    <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                    <view class="goodsQuanValue">{{item.quan}}</view>
+                  </view>
+
+                </view>
+
+              </view>
+            </block>
+          </view>
+          <view class="right">
+            <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+              <view wx:if="{{item.iid % 2 != 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+                <view class='goodsImg'>
+                  <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+                  <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                    自购预计再返：{{item.usercommission}}
+                  </view>
+                </view>
+                <view class="goodsTitle">
+                  <view class="goodsSourceIcon">
+                    <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                    <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                    <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                  </view>
+                  <text class="goodsTitleText">{{item.title}}</text>
+                </view>
+                <view class="view-op">
+                  <view class="goodsCPrice">
+                    <text class="goodsCPriceText">券后:</text>
+                    <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+                  </view>
+                  <view class="goodsVolume">
+                    <text class="goodsVolumeText">已售：</text>
+                    <text class="goodsVolumeValue">{{item.volume}}</text>
+                  </view>
+
+                </view>
+                <view class="view-op2">
+                  <view class="goodsOPrice">
+                    <text class="goodsOPriceText">原价：</text>
+                    <text class="goodsOPriceValue">{{item.price}}</text>
+                  </view>
+                  <view class="goodsQuan">
+                    <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                    <view class="goodsQuanValue">{{item.quan}}</view>
+                  </view>
+
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+        <image src="../image/shouye.png" class="gotoTop"></image>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+
+    <view class="weui-loadmore__tips">正在加载...</view>
+  </view>
+</view>
+
+<!-- 引导层弹框 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen2" wx:if="{{showModalStatus2}}"></view>
+<view animation="{{animationData2}}" class="commodity_attr_box2" wx:if="{{showModalStatus2}}">
+  <view class="zhongxintu">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/yindaotu.png' class='yindaotu-img'></image>
+  </view>
+  <view class='close' bindtap='hideModal2'></view>
+  <view class='GetRP' bindtap='GetRP'></view>
+</view>
+<!-- 分类弹框 -->
+<!-- 遮罩层显示 -->
+<view class="commodity_screen3" wx:if="{{showModalStatus3}}"></view>
+<view animation="{{animationData3}}" class="commodity_attr_box3" wx:if="{{showModalStatus3}}">
+  <view class="alert">
+    <view class='guanbi1'>
+      <image src='../image/close.png' class='guanbi-img' bindtap='hideModal3'></image>
+    </view>
+    <view class="hengxiang-fenlei">
+      <block wx:for="{{goodsCatalog}}" wx:key="item.picSort">
+        <view class="zongxiang1-1" bindtap="sortsearch_zgc" id="{{item.picSort}}">
+          <view class='tu-weizhi1'>
+            <image src="{{item.picUrl}}" class="tu1"></image>
+          </view>
+          <!-- <text class="zhonglei" id="{{item.picSort}}" class="fenleiziti">{{item.picName}}</text> -->
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

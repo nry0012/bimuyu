@@ -1,0 +1,122 @@
+<!--activity.wxml-->
+<view class="container">
+
+  <view class="tuijian1" style="position:fixed;display:{{scrollState ? 'none' : 'flex'}}">
+    <block wx:for="{{goodsdata3}}" wx:key="item.colID">
+      <view id="{{item.colID}}" bindtap="sortClick" class="{{item.colID==CheckItem?'is_checked1':'normal1'}} {{CheckItem==0&&index==0?'is_checked1':'normal1'}}">
+        {{item.colName}}
+      </view>
+    </block>
+  </view>
+
+  <!--  <view class="bottom" style="margin-top:{{scrollState ? '0vh' : '7vh'}}">  -->
+  <view class="bottom" style="margin-top:{{scrollState ? '0vh' : '7vh'}}">
+    <scroll-view style="height:{{scrollState ? '100vh' : '93vh'}}" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="onReachBottom">
+      <view class="top">
+
+        <image src="{{banner}}" class="recommend_hot_image"></image>
+
+
+        <view class="tuijian1">
+          <block wx:for="{{goodsdata3}}" wx:key="item.colID">
+            <view id="{{item.colID}}" bindtap="sortClick" class="{{item.colID==CheckItem?'is_checked1':'normal1'}} {{CheckItem==0&&index==0?'is_checked1':'normal1'}}">
+              {{item.colName}}
+            </view>
+          </block>
+        </view>
+      </view>
+
+      <view class="bottom1">
+        <view class="left">
+          <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+            <view wx:if="{{item.iid % 2 == 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+              <view class='goodsImg'>
+                <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+                <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                  自购预计再返：{{item.usercommission}}
+                </view>
+              </view>
+              <view class="goodsTitle">
+                <view class="goodsSourceIcon">
+                  <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                  <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                  <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                </view>
+                <text class="goodsTitleText">{{item.title}}</text>
+              </view>
+              <view class="view-op">
+                <view class="goodsCPrice">
+                  <text class="goodsCPriceText">券后:</text>
+                  <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+                </view>
+                <view class="goodsVolume">
+                  <text class="goodsVolumeText">已售：</text>
+                  <text class="goodsVolumeValue">{{item.volume}}</text>
+                </view>
+
+              </view>
+              <view class="view-op2">
+                <view class="goodsOPrice">
+                  <text class="goodsOPriceText">原价：</text>
+                  <text class="goodsOPriceValue">{{item.price}}</text>
+                </view>
+                <view class="goodsQuan">
+                  <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                  <view class="goodsQuanValue">{{item.quan}}</view>
+                </view>
+
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="right">
+          <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+            <view wx:if="{{item.iid % 2 != 1}}" class="goodsList" bindtap="showGoods" id="{{item.id}}">
+              <view class='goodsImg'>
+                <image src="{{item.pic_url}}" data-id="{{item.id}}" class="goodsImgItem"></image>
+                <view class="goodsCommission" wx:if="{{renwushenfen==1}}">
+                  自购预计再返：{{item.usercommission}}
+                </view>
+              </view>
+              <view class="goodsTitle">
+                <view class="goodsSourceIcon">
+                  <image class="goodsSourceIcon" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                  <image class="goodsSourceIcon" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                  <image class="goodsSourceIcon" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                </view>
+                <text class="goodsTitleText">{{item.title}}</text>
+              </view>
+              <view class="view-op">
+                <view class="goodsCPrice">
+                  <text class="goodsCPriceText">券后:</text>
+                  <text class="goodsCPriceValue">{{item.coupon_price}}</text>
+                </view>
+                <view class="goodsVolume">
+                  <text class="goodsVolumeText">已售：</text>
+                  <text class="goodsVolumeValue">{{item.volume}}</text>
+                </view>
+              </view>
+              <view class="view-op2">
+                <view class="goodsOPrice">
+                  <text class="goodsOPriceText">原价：</text>
+                  <text class="goodsOPriceValue">{{item.price}}</text>
+                </view>
+                <view class="goodsQuan">
+                  <image class="goodsQuanImg" src="../image/goodsQuan.png"></image>
+                  <view class="goodsQuanValue">{{item.quan}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+        <image src="../image/shouye.png" class="huishouye1"></image>
+      </view>
+    </scroll-view>
+  </view>
+  <!--  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载...</view>
+  </view> -->
+</view>

@@ -1,0 +1,31 @@
+<!--pages/millionAct/millionAct.wxml-->
+<view class="container">
+<image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/millionAct.png" class="tu"></image>
+<view class='joinus' bindtap='joinus'></view>
+<view class='actRule' bindtap='actRule'></view>
+<button class="invite" open-type="share"></button>
+<view class='bonus'>{{bonus}}</view>
+
+</view>
+
+<!--  登陆红包弹窗 -->
+<!-- 遮罩层显示 -->
+<view class="coverlayer_ground" wx:if="{{showJoinStatus}}"></view>
+<view animation="{{animationData7}}" class="commodity_attr_box1" wx:if="{{showJoinStatus}}">
+  <view class="alert-erweima">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/millionJoin.png' class='joinImg'></image>
+    <view class="joinButton" bindtap='openMember'> </view>    
+    <view class="joinCancel" bindtap='joinusHide'> </view>
+  </view>
+</view>
+
+<!--  登陆红包弹窗 -->
+<!-- 遮罩层显示 -->
+<view class="coverlayer_ground" wx:if="{{showRuleStatus}}"></view>
+<view animation="{{animationData7}}" class="commodity_attr_box1" wx:if="{{showRuleStatus}}">
+  <view class="alert-erweima">
+    <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/millionRule.png' class='ruleImg'></image>
+    <view class="joinCancel" bindtap='actRuleHide'> </view>
+
+  </view>
+</view>

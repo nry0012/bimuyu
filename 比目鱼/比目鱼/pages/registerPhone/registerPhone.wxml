@@ -1,0 +1,34 @@
+<!--agent.wxml-->
+<import src="../../component/toast/toast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+
+<view class="container">
+  <view class="top">
+    <text class="title">会员中心</text>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="content" >
+       <view class="weixin">
+        <image src="../image/dianhua.png" class="dianhuatu"></image>
+        <input type="text" placeholder-class="kuangneiziti"  name="phone" value="{{phone}}" placeholder="请输入手机号码"  class="shurukuang" bindinput="phoneinput" type="number" maxlength="11" />
+        <button class="yanzhengma" bindtap="changeCode" disabled="{{codeDis}}">
+          <text class="yanzhengziti" hidden="{{flag != true || phoneCode == '短信验证码'}}">重发</text>{{phoneCode}}
+          <text class="yanzhengziti" hidden="{{phoneCode == '获取验证码'}}">S后重发</text>
+        </button>
+      </view> 
+      <view class="weixin">
+        <image src="../image/duanxin.png" class="duanxintu"></image>
+        <input  type="text" name="yanzhengma" value="{{yanzhengma}}" placeholder="请输入6位短信验证码" placeholder-class="kuangneiziti" class="shurukuang" type="number" bindinput="codeinput" maxlength="6" />
+      </view>
+    </view>
+
+    <view class="bottom">
+      <button class="dibuanniu" formType="submit"></button>
+       <image src="../image/kaitong.png" class="kaitong-img"></image>
+ 
+      <text class="tiaojian">
+    点击“申请开通”按钮即表示同意《比目鱼代理协议》并自愿使用微信支付￥{{payAmount}}元／年作为平台开通服务费用。
+    </text>
+    </view>
+  </form>
+</view>

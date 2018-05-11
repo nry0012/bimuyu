@@ -1,0 +1,5 @@
+<!--user.wxml-->
+<view class="container">
+<image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/userxieyi.png" class="tu"></image>
+
+</view>

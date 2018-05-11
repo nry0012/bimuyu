@@ -1,0 +1,39 @@
+<!--Rand.wxml-->
+
+<view class="contains">
+  <view class="top">
+    <text class="top-text">本月渔夫排行榜</text>
+    <view class="topImage">
+      <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/top1.png" class="top-img"></image>
+    </view>
+    <view class="top-nickname">{{nickname}}</view>
+    <view class="top-heng">
+      <view class="top-heng-ziti">好人缘数</view>
+      <view class="top-heng-ziti">连续任务</view>
+      <view class="top-heng-ziti">当前佣金</view>
+    </view>
+    <view class="top-heng">
+      <view class="top-heng-ziti">{{goodsdata.haorenyuanshu}}</view>
+      <view class="top-heng-ziti">{{goodsdata.lianxurenwu}}</view>
+      <view class="top-heng-ziti">￥{{goodsdata.yongjin}}</view>
+    </view>
+  </view>
+  <view class="rand">
+    <block wx:for-items="{{rand}}">
+      <view class="rand-list">
+        <view class="rand-order-normal">2</view>
+        <image src="{{item.imgurl}}" class="rand-img"></image>
+        <view class="rand-nickname">{{item.nickname}}</view>
+        <view class="rand-haorenyuanshu">{{item.haorenyuanshu}}</view>
+        <view class="rand-lianxurenwu">{{item.lianxurenwu}}</view>
+        <view class="rand-yongjin">￥{{item.yongjin}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="bottom">
+    <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/top1.png" class="bottom-img"></image>
+    <view class="bottom-text">本月渔夫排行榜</view>
+    <view class="bottom-order">{{goodsdata.rank}}</view>
+    <view class="bottom-text">名</view>
+  </view>
+</view>

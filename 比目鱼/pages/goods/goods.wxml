@@ -1,0 +1,97 @@
+<!--pages/goods/goods.wxml-->
+<import src="../../component/title/title.wxml" />
+
+<view class='container'>
+  <template is="compTitle" data="{{ ...comTitle}}" />
+
+  <view class="top">
+    
+    <view class="tuijian1">
+      <block wx:for="{{goodsdata3}}" wx:key="item.colID">
+        <view id="{{item.colID}}" bindtap="typeClick" class="{{item.colID==CheckItem?'is_checked1':'normal1'}} {{CheckItem==0&&index==0?'is_checked1':'normal1'}}">
+          {{item.colName}}
+        </view>
+      </block>
+    </view>
+    
+  </view>
+  <view class='content'>
+    <scroll-view style="height:1300rpx;" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="addMore">
+      <view class='goodslist'>
+        <block wx:for="{{goodsdata1}}" wx:key="{{item.id}}">
+          <view class="content-neirong" bindtap="showGoods" id="{{item.id}}">
+            <view class='neirong-left'>
+              <image src="{{item.pic_url}}" class='chanpin-img'></image>
+              <!-- <view class="goodsCommission" wx:if="{{renwushenfen==1}}"> -->
+              <view class="image_zaifan">
+                自购预计再返：{{item.usercommission}}
+              </view>
+            </view>
+            <view class='neirong-right'>
+              <view class='right-title' style='word-break:break-all;width:500rpx;height:70rpx;overflow:hidden'>
+                {{item.title}}
+              </view>
+
+              <view class="chanpinxinxi1">
+                <view class="juzuo1-1">
+                  <view class="laiyuan">
+                    <image src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                    <image src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                    <image src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                  </view>
+                </view>
+                <view class="juzou1-2">
+                  <text class="right-quanhou">券后价:{{item.coupon_price}}</text>
+
+                </view>
+                <view class="juyou1">
+                  <text class="right-yishou">已售：</text>
+                  <text>{{item.volume}}</text>
+                </view>
+              </view>
+              <view class="chanpinxinxi1">
+
+                <view class="juzuo1">
+                  <text class="yuanjia">原价：</text>
+                  <text class="yuanjia1">{{item.price}}</text>
+                </view>
+                <view class='sheng'>
+                  <image src='../image/sheng.png'></image>
+                  <text>{{item.quan}}</text>
+                </view>
+              </view>
+              <!-- <view class='quanhou-kuai'>
+
+            <view class='kuai-left'>
+              <view class='quanhou-fuhao'>原价 ￥</view>
+              <view class='quanhou-text'>{{item.price}}</view>
+            </view>
+            <view class='kuai-right'>
+              <view class='quanhou-fuhao'>券后 ￥</view>
+              <view class='quanhou-text'>{{item.coupon_price}}</view>
+            </view>
+          </view>
+          <view class='quanhou-kuai'>
+            <view class='kuai-left'>
+              <view class='quan-fuhao'>
+                <image src='../image/quanfuhao.png' class='quanfuhao-img'></image>
+              </view>
+              <view class='quan-text'>{{item.quane}}</view>
+              <view class='quanzi-text'>券</view>
+            </view>
+            <view class='kuai-right'>
+              <view class='quan-fuhao'>
+                <image src='../image/yongjin-img.png' class='quanfuhao-img'></image>
+              </view>
+              <view class='yongjin-text'>{{item.yongjin}}</view>
+              <view class='quanzi-text'>佣</view>
+            </view>
+          </view> -->
+
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

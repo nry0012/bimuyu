@@ -1,0 +1,102 @@
+/* agent.wxss */
+@import "../../component/title/title.wxss";
+/*
+page {
+  background-image: linear-gradient(-45deg, #f77062 0%, #fe5196 100%);
+}
+*/
+
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 14px;
+  /*  overflow-x: hidden;*/
+}
+
+.service {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  border-bottom: 2px solid #b9b9b9;
+  height: 80rpx;
+  align-items: center;
+  margin-left: 50rpx;
+}
+
+.serviceTitle {
+  width: 50%;
+  text-align: left;
+}
+
+.serviceName {
+  width: 50%;
+  text-align: right;
+}
+
+.payMode {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20rpx 50rpx;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.payModeTitle {
+  width: 50%;
+  text-align: left;
+}
+
+.payModeName {
+  width: 50%;
+  text-align: right;
+}
+
+.amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20rpx 50rpx;
+  border-bottom: 1px solid #b9b9b9;
+}
+
+.amountTitle {
+  width: 50%;
+  text-align: left;
+}
+
+.amountValue {
+  width: 50%;
+  text-align: right;
+}
+
+.illustrator {
+  width: 100%;
+  margin: 20rpx 50rpx;
+}
+
+.signup {
+  width: 100%;
+  background: #f54751;
+  height: 90rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+
+.signupButton {
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+}
+
+form {
+  width: 100%;
+}

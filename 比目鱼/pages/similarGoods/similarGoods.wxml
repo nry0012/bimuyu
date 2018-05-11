@@ -1,0 +1,132 @@
+<view class='container'>
+
+
+  <view class='content'>
+    <view class="content-neirong"  id="{{goods.id}}">
+      <view class='neirong-left'>
+        <image src="{{goods.pic_url}}" class='chanpin-img'></image>
+      </view>
+      <view class='neirong-right'>
+        <view class='laiyuan1'>
+          <view class="laiyuan-top">
+            <image class="laiyuan" src="../image/taobao.png" wx:if="{{goods.shop_type=='C'}}"></image>
+            <image class="laiyuan" src="../image/jingdong.png" wx:if="{{goods.shop_type=='D'}}"></image>
+            <image class="laiyuan" src="../image/tianmao.png" wx:if="{{goods.shop_type=='B'}}"></image>
+          </view>
+          <view class='right-title' style='word-break:break-all;width:464rpx'>
+            {{goods.title}}
+          </view>
+        </view>
+        <view class="chanpinxinxi1">
+          <view class="juzuo1">
+            <text class="yuanjia">原价：</text>
+            <text class="yuanjia1">{{goods.price}}</text>
+          </view>
+          <view class="juyou1">
+            <text class="originalPrice1">券后:</text>
+            <text class="originalPrice2">{{goods.coupon_price}}</text>
+          </view>
+        </view>
+        <view class="chanpinxinxi1">
+
+          <view class="juzuo1">
+            <image class="yuanjia quanfuhao-img" src='../image/quanfuhao.png'></image>
+            <text class="xiaoliang1">￥{{goods.quan}}</text>
+            <text class='xiaoliang'>券</text>
+          </view>
+          <view class="juyou1" wx:if="{{renwushenfen==1}}">
+            <image class="yuanjia quanfuhao-img" src='../image/yongjin-img.png'></image>
+            <text class="xiaoliang1">￥{{goods.usercommission}}</text>
+            <text class='xiaoliang'>佣</text>
+          </view>
+          <view class="juyou1" wx:if="{{renwushenfen==0}}">
+            <text class="yuanjia1-1">销量：</text>
+            <text class="xiaoliang1-1">{{item.volume}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+  <view class='tuijiankuai'>
+    <view class="tuijian1">
+        <image src='../image/xiangsishangpin.png' class='tuijian-img'></image>
+    </view>
+  </view>
+  <view class='tuijian'>
+
+    <view class='noFind' wx:if="{{flag==0}}">
+      <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/zhaobudao.png' class='zhaobudao-img'></image>
+
+    </view>
+    <view class='nofind' wx:if="{{flag==1}}">
+      <view class="bottom">
+         <scroll-view style="height:1100rpx;" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="onReachBottom">
+        <view class="bottom1">
+      <block wx:for-items="{{images}}" wx:key="{{item.id}}">
+        <view class="content-neirong" bindtap="showGoods" id="{{item.id}}">
+          <view class='neirong-left'>
+            <image src="{{item.pic_url}}" class='chanpin-img'></image>
+          </view>
+          <view class='neirong-right'>
+            <view class='right-title'>
+              {{item.title}}
+            </view>
+            <view class="chanpinxinxi1-1">
+              <view class="juzuo1-1">
+                <view class="laiyuan">
+                  <image class="laiyuan" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                  <image class="laiyuan" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                  <image class="laiyuan" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                </view>
+              </view>
+              <view class="juyou1-1">
+                <text class="right-quanhou">券后￥</text>
+                <text class="right-quanhou1">{{item.coupon_price}}</text>
+              </view>
+
+            </view>
+            <view class="chanpinxinxi1-1">
+              <view class="juzuo1">
+                <text class="yuanjia">原价:</text>
+                <text class="yuanjia1">{{item.price}}</text>
+              </view>
+              <view class="juyou1">
+                <text class="left-yuanjia">已售:</text>
+                <text class="right-xiaoliang">{{item.volume}}</text>
+              </view>
+            </view>
+
+            <view class='right-anniu'>
+              <image src='../image/anniu.png' class='anniu-img'></image>
+            </view>
+
+          </view>
+        </view>
+      </block>
+        </view>
+        <view class="com-widget-goTop" bindtap="goTop" wx:if="{{floorstatus}}">
+          <image src="../image/shouye.png" class="huishouye1"></image>
+        </view>
+         </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <view>
+  </view>
+
+  <!-- <view class="bottom" wx:if="{{flag==1}}">
+
+    <view class="sousuowuxiao">
+      <view class="sousuowuxiaoziti">未查到相关商品</view>
+      <view class="sousuowuxiaoziti">你可以这样输入：玩具，皮鞋，衬衫...</view>
+    </view>
+  </view> -->
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}" wx:if="{{flag==0}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载...</view>
+  </view>
+
+</view>

@@ -1,0 +1,150 @@
+/* pages/registerPhone/registerPhone.wxss */
+/* agent.wxss */
+
+
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.top {
+  width: 100%;
+  text-align: center;
+  margin-top: 20%;
+}
+
+.title {
+  color: gray;
+  font-size: 40px;
+  font-family: '微软雅黑';
+}
+
+.content {
+  background: white;
+  width: 624rpx;
+  height: 202rpx;
+  border-radius: 8px;
+  margin-top: 122rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8.5%;
+}
+
+.weixin {
+  display: flex;
+  flex-direction: row;
+  margin-top: 28rpx;
+  margin-left: 30rpx;
+  border-bottom: 1px #d7d7d7 solid;
+  padding-right: 20rpx;
+  margin-right: 30rpx;
+  height: 100rpx;
+}
+
+.weixintu {
+  width: 40rpx;
+  height: 33rpx;
+  margin-top: 8rpx;
+}
+
+.xingmingtu {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 8rpx;
+}
+
+.dianhuatu {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 8rpx;
+}
+
+.duanxintu {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 8rpx;
+}
+
+.shurukuang {
+  margin-left: 20rpx;
+  color: #595959;
+  font-size: 13px;
+  /* border: 1px solid red; */
+}
+
+.kuangneiziti {
+  font-family: '微软雅黑';
+  color: #d7d7d7;
+  font-size: 10pt;
+  line-height: 73rpx;
+  padding-top: 0.5%;
+}
+
+.jinggao {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 10rpx;
+  margin-left: 130rpx;
+}
+
+.yanzhengma {
+  margin-top: 1%;
+  margin-left: 40rpx;
+  width: 173rpx;
+  height: 40rpx;
+  border-radius: 15px;
+  line-height: 40rpx;
+  text-align: center;
+  color: white;
+  font-family: '微软雅黑';
+  font-size: 10px;
+  background-image: linear-gradient(-45deg, #f77062 0%, #fe5196 100%);
+}
+
+.yanzhengziti {
+  color: white;
+  font-family: '微软雅黑';
+  font-size: 12px;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-top: 25%;
+}
+
+.dibuanniu {
+  margin-left: 4%;
+  z-index: 10000;
+  width: 687rpx;
+  height: 100rpx;
+  border: 1px solid red;
+  opacity: 0;
+}
+
+.kaitong-img {
+  width: 624rpx;
+  height: 140rpx;
+  margin-top: -14%;
+  margin-left: 8%;
+}
+
+.tiaojian {
+  color: white;
+  font-size: 11px;
+  padding-top: 20rpx;
+  width: 87%;
+  margin-left: 5%;
+  margin-top: -65rpx;
+  line-height: 44rpx;
+}
+
+.hengxiangzhanshi {
+  display: flex;
+  flex-direction: row;
+}

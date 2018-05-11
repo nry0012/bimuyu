@@ -1,0 +1,475 @@
+/* pages/memberCenter/memberCenter.wxss */
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  background-color: white;
+  color: #595959;
+}
+
+.nav {
+  border-bottom: 1px solid #f1f4f3;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 1vh;
+}
+
+.nav1 {
+  width: 50%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.nav2-sel {
+  text-align: center;
+  width: 50%;
+  border-bottom: 2px solid #f54751;
+  padding: 12rpx 50rpx;
+}
+
+.nav2 {
+  text-align: center;
+  width: 50%;
+}
+
+.detail {
+  margin-top: 2vh;
+  width: 100%;
+}
+
+.wallet {
+  width: 100%;
+}
+
+.walletHeader {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+.forecastTile {
+  font-size: 12px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.forecastAmount {
+  text-align: center;
+  font-size: 24;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+.forecastAmountUnit {
+  font-size: 10px;
+}
+
+.act {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.actItem {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.actWithdraw {
+  width: 80px;
+  height: 30px;
+  background: #f54751;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+.actWithdrawList {
+  width: 80px;
+  height: 30px;
+  background: #01ce93;
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  border-radius: 5px;
+  color: white;
+}
+
+.separator {
+  width: 100%;
+  border-bottom: solid 5px #f1f4f3;
+}
+
+.performance {
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.performanceDateSel {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+}
+
+.pDate-sel {
+  width: 35%;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #f54751;
+  border-radius: 30rpx;
+  padding: 5rpx 20rpx;
+  line-height: 35rpx;
+  margin-left: 50rpx;
+  color: #f54751;
+  height: 35rpx;
+  margin: 11px;
+  background: white;
+}
+
+.pDate {
+  width: 35%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 35rpx;
+  height: 35rpx;
+  margin: 11px;
+  padding: 5rpx 20rpx;
+}
+
+.performanceDetail {
+  width: 80%;
+  background: #eafdf6;
+  margin-left: 10%;
+  height: 15vh;
+  margin-top: 2vh;
+}
+
+.performanceDetailTitle {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.incomeTitle {
+  width: 50%;
+  text-align: center;
+}
+
+.volumeTitle {
+  width: 50%;
+  text-align: center;
+}
+
+.performanceDetailValue {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.incomeValue {
+  width: 50%;
+  text-align: center;
+}
+
+.volumeValue {
+  width: 50%;
+  text-align: center;
+}
+
+.performanceAct {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  margin: 2vh;
+}
+
+.performanceMore {
+  width: 50%;
+}
+
+.performanceSep {
+}
+
+.performanceHis {
+  width: 50%;
+}
+
+.bonusPlat {
+  background: #f1f4f3;
+  height: 30px;
+  text-align: left;
+  padding-left: 50rpx;
+  line-height: 30px;
+}
+
+.bonus {
+  margin-top: 1vh;
+  width: 100%;
+}
+
+.bonusDate {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 50rpx 2vh 50rpx;
+}
+
+.bDate-sel {
+  width: 40%;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #f54751;
+  border-radius: 30rpx;
+  padding: 5rpx 10rpx;
+  line-height: 35rpx;
+  margin-left: 50rpx;
+  color: #f54751;
+  height: 35rpx;
+  margin: 11px;
+  background: white;
+}
+
+.bDate {
+  width: 40%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 35rpx;
+  height: 35rpx;
+  margin: 11px;
+  padding: 5rpx 10rpx;
+}
+
+.bonusDetail {
+  width: 80%;
+  background: #eafdf6;
+  margin-left: 10%;
+  height: 15vh;
+  margin-top: 2vh;
+}
+
+.bonusDetailTitle {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.bonusDetailValue {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.order {
+  width: 100%;
+}
+
+.orderNav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vh;
+}
+
+.orderNavItem1-sel {
+  text-align: center;
+  font-size: 16px;
+  padding: 10rpx 50rpx;
+  border-bottom: 2px solid #f54751;
+}
+
+.orderNavItem1 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.orderNavItem {
+  width: 35%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.orderTpye {
+  background: #f1f4f3;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  line-height: 50px;
+}
+
+.orderTypeItem-sel {
+  width: 35%;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #f54751;
+  border-radius: 30rpx;
+  padding: 5rpx 20rpx;
+  line-height: 35rpx;
+  margin-left: 50rpx;
+  color: white;
+  height: 35rpx;
+  margin: 11px;
+  background: #f54751;
+}
+
+.orderTypeItem {
+  width: 35%;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 30rpx;
+  padding: 5rpx 20rpx;
+  line-height: 35rpx;
+  margin-left: 50rpx;
+  color: #f54751;
+  height: 35rpx;
+  margin: 11px;
+  background: white;
+}
+
+.noOrder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background: #f1f4f3;
+  height: 85vh;
+}
+
+.noOrderPic {
+  margin-top: 20vh;
+}
+
+.noOrderImg {
+  width: 205rpx;
+  height: 223rpx;
+}
+
+.noOrderText {
+  text-align: center;
+  font-size: 16px;
+  color: #595959;
+  margin: 5vh 0;
+}
+
+.noOrderGG {
+  text-align: center;
+  font-size: 16px;
+  color: #f4ab33;
+}
+
+.orderList {
+}
+
+.orderListItem {
+  width: 100%;
+  border-bottom: 10px solid #f1f4f3;
+  display: flex;
+  flex-direction: column;
+}
+
+.goodsInfo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 3px;
+}
+
+.goodsImg {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.goodsImgItem {
+  width: 240rpx;
+  height: 240rpx;
+}
+
+.goodsDetail {
+  margin-top: 20rpx;
+  display: flex;
+  margin-right: 10rpx;
+  flex-direction: column;
+  margin-left: 2%;
+  height: 240rpx;
+  justify-content: space-between;
+}
+
+.goodsName {
+  font-family: "微软雅黑";
+  font-size: 14px;
+  color: #595959;
+  letter-spacing: -0.6px;
+  margin-left: 1%;
+}
+
+.goodsDate {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.goodsIcon {
+  align-items: flex-start;
+}
+
+.goodsIconItem {
+  height: 32rpx;
+  margin-top: 9rpx;
+  width: 32rpx;
+}
+
+.goodsCreateDate {
+  margin-left: 30rpx;
+  font-size: 14px;
+}
+
+.settleInfo {
+  margin: 1vh;
+}
+
+.settleTitle {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.settleTitleItem {
+  width: 35%;
+}
+
+.settleValue {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 2vh;
+}
+
+.settleValueItem {
+  width: 35%;
+}

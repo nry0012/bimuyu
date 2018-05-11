@@ -1,0 +1,68 @@
+<!--pages/memberUpgrade/memberUpgrade.wxml-->
+<!--agent.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="service">
+      <view class="serviceTitle">
+        开通服务
+      </view>
+      <view class="serviceName">
+      </view>
+    </view>
+    <view class="service" id="2" bindtap='memberSel'>
+      <view class="serviceTitle">
+        青铜会员
+      </view>
+      <view class="serviceName">
+      <image class='selected' src='../image/selected.png' wx:if="{{lvSel==2}}"></image> 
+      </view>
+    </view>
+    <view class="service" id="3" bindtap='memberSel'>
+      <view class="serviceTitle">
+        白银会员
+      </view>
+      <view class="serviceName">
+      <image class='selected' src='../image/selected.png' wx:if="{{lvSel==3}}"></image> 
+      </view>
+    </view>
+    <view class="service" id="4" bindtap='memberSel'>
+      <view class="serviceTitle">
+        黄金会员
+      </view>
+      <view class="serviceName">
+      <image class='selected' src='../image/selected.png' wx:if="{{lvSel==4}}"></image> 
+      </view>
+    </view>
+    <view class="service">
+      <view class="serviceTitle">
+        付款方式
+      </view>
+      <view class="serviceName">
+        按年付费
+      </view>
+    </view>
+    <view class="service">
+      <view class="serviceTitle">
+        应付金额
+      </view>
+      <view class="serviceName">
+        ￥{{payAmount}}
+      </view>
+    </view>
+    <view class="illustrator">
+      <text>
+	开通说明：\n
+1.会员服务一经开通不支持退款；\n
+2.付款成功即视为开通，购买后立即生效；\n
+3.一个帐号仅可申请一次￥1.00普通会员资格；\n
+4.支付即视为同意《比目鱼生活会员服务协议》。
+</text>
+    </view>
+    <view class="signupButton">
+      <button class="signup" formType="submit">立即开通</button>
+    </view>
+  </form>
+</view>

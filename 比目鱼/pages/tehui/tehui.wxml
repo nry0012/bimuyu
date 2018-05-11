@@ -1,0 +1,56 @@
+<!--pages/tehui/tehui.wxml-->
+
+
+<view class='top'>
+  <image src='http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/tehui.png' class='top-img'></image>
+</view>
+
+<view class='content'>
+
+  <scroll-view style="height:1300rpx;" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="jiazhaigengduo">
+    <block wx:for-items="{{goodsdata}}" wx:key="{{item.id}}">
+      <view class="content-neirong" bindtap="showGoods" id="{{item.id}}">
+        <view class='neirong-left'>
+          <image src="{{item.pic_url}}" class='chanpin-img'></image>
+        </view>
+        <view class='neirong-right'>
+          <view class='right-title'>
+            {{item.title}}
+          </view>
+          <view class="chanpinxinxi1-1">
+            <view class="juzuo1-1">
+              <view class="laiyuan">
+                <image class="laiyuan" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                <image class="laiyuan" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                <image class="laiyuan" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+              </view>
+            </view>
+            <view class="juyou1-1">
+              <text class="right-quanhou">券后￥</text>
+              <text class="right-quanhou1">{{item.coupon_price}}</text>
+            </view>
+
+          </view>
+          <view class="chanpinxinxi1-1">
+            <view class="juzuo1">
+              <text class="yuanjia">原价:</text>
+              <text class="yuanjia1">{{item.price}}</text>
+            </view>
+            <view class="juyou1">
+              <text class="left-yuanjia">已售:</text>
+              <text class="right-xiaoliang">{{item.volume}}</text>
+            </view>
+          </view>
+
+          <view class='right-anniu'>
+            <image src='../image/anniu.png' class='anniu-img'></image>
+          </view>
+
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+<!--  <view class='chankangengduo'>
+    <image src='../image/gengduo.png' class='chakangengduo-img' bindtap='jiazhaigengduo'></image>
+  </view> -->
+</view>

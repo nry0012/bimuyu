@@ -1,0 +1,134 @@
+<view class="content">
+  <view class="nav">
+    <view class="nav1" id="1" bindtap='navClick'>
+      <text class="{{navSel==1?'nav2-sel':'nav2'}}">钱包</text>
+    </view>
+    <view class="nav1" id="2" bindtap='navClick'>
+      <text class="{{navSel==2?'nav2-sel':'nav2'}}">订单</text>
+    </view>
+  </view>
+  <view class="detail">
+    <view class="wallet" wx:if="{{navSel==1}}">
+      <view class="walletHeader">
+        <view class="forecastTile">-------预估可提现金额--------</view>
+        <view class="forecastAmount">{{forecastAmount}}
+          <text class="forecastAmountUnit">元</text>
+        </view>
+        <view class="act">
+          <view class='actItem'>
+            <view class="actWithdraw" bindtap="withdraw">提现</view>
+          </view>
+          <view class='actItem'>
+            <view class="actWithdrawList" bindtap="withdrawRecord">提现记录</view>
+          </view>
+        </view>
+      </view>
+      <view class="separator"></view>
+      <view class="performance">
+        <view class="performanceDateSel">
+          <block wx:for="{{pDateSel}}" wx:for-index="index" wx:key="{{item.id}}">
+            <view class="{{item.id==pDateID?'pDate-sel':'pDate'}}" bindtap="pDate" id="{{item.id}}">{{item.pDateName}}</view>
+          </block>
+        </view>
+        <view class="performanceDetail">
+          <view class="performanceDetailTitle">
+            <view class="incomeTitle">预估收入</view>
+            <view class="volumeTitle">有效订单量</view>
+          </view>
+          <view class="performanceDetailValue">
+            <text class="incomeValue">￥{{income}}</text>
+            <text class="volumeValue">{{volume}}</text>
+          </view>
+        </view>
+        <view class="performanceAct">
+          <view class="performanceMore" bindtap="performanceMore">查看更多</view>
+          <view class="performanceSep">|</view>
+          <view class="performanceHis" bindtap="performanceHis">历史明细</view>
+        </view>
+      </view>
+      <view class="bonusPlat">平台奖励金</view>
+      <view class="bonus">
+        <view class="bonusDate">
+          <block wx:for="{{bDateSel}}" wx:for-index="index" wx:key="{{item.id}}">
+            <view class="{{item.id==bDateID?'bDate-sel':'bDate'}}" bindtap="bDate" id="{{item.id}}">{{item.bDateName}}</view>
+          </block>
+        </view>
+        <view class="bonusDetail">
+          <view class="bonusDetailTitle">
+            <text class="incomeTitle">登陆奖励</text>
+            <text class="volumeTitle">邀请奖励</text>
+          </view>
+          <view class="bonusDetailValue">
+            <text class="incomeValue">￥{{bonusLoading}}</text>
+            <text class="volumeValue">￥{{bonusInvite}}</text>
+          </view>
+        </view>
+        <view class="performanceAct">
+          <view class="performanceMore" bindtap="bonusMore">查看更多</view>
+          <view class="performanceSep">|</view>
+          <view class="performanceHis" bindtap="bonusHis">历史明细</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="order" wx:if="{{navSel==2}}">
+      <view class="orderNav">
+        <block wx:for="{{orderSel}}" wx:for-index="index" wx:key="{{item.id}}">
+          <view class="orderNavItem" bindtap="orderNav" id="{{item.id}}">
+            <text class="{{item.id==orderID?'orderNavItem1-sel':'orderNavItem1'}}">{{item.orderNavName}}</text>
+          </view>
+        </block>
+      </view>
+      <view class="orderTpye">
+        <block wx:for="{{orderType}}" wx:for-index="index" wx:key="{{item.id}}">
+          <view class="{{item.id==orderTypeID?'orderTypeItem-sel':'orderTypeItem'}}" bindtap="orderType" id="{{item.id}}">{{item.orderTypeName}}</view>
+        </block>
+      </view>
+      <view class='noOrder' wx:if="{{noOrder == 0}}">
+        <view class='noOrderPic'>
+          <image src='../image/noOrder.png' class="noOrderImg"></image>
+        </view>
+        <view class='noOrderText'>- 暂无订单 或 有当日订单产生可在次日查询 -</view>
+        <view class='noOrderGG' bindtap='goIndex'>去逛逛</view>
+
+      </view>
+      <view class="orderList" wx:if="{{noOrder > 0}}">
+    <scroll-view style="height:80vh;" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="onReachBottom">
+        <block wx:for="{{goodsData}}" wx:for-index="index" wx:key="{{item.id}}">
+
+          <view class="orderListItem" >
+            <view class="goodsInfo">
+              <view class="goodsImg">
+                <image class="goodsImgItem" src="{{item.pic_url}}"></image>
+              </view>
+              <view class="goodsDetail">
+                <view class="goodsName">{{item.title}}</view>
+                <view class="goodsDate">
+                  <view class="goodsIcon">
+                    <image class="goodsIconItem" src="../image/taobao.png" wx:if="{{item.shop_type=='C'}}"></image>
+                    <image class="goodsIconItem" src="../image/jingdong.png" wx:if="{{item.shop_type=='D'}}"></image>
+                    <image class="goodsIconItem" src="../image/tianmao.png" wx:if="{{item.shop_type=='B'}}"></image>
+                  </view>
+                  <view class="goodsCreateDate">{{item.orderTime}}创建</view>
+                </view>
+              </view>
+            </view>
+            <view class="settleInfo">
+              <view class="settleTitle">
+                <view class="settleTitleItem">付款金额</view>
+                <view class="settleTitleItem">预估佣金</view>
+                <view class="settleTitleItem">当前状态</view>
+              </view>
+              <view class="settleValue">
+                <view class="settleValueItem">{{item.totalMoney}}</view>
+                <view class="settleValueItem">{{item.userCommission}}</view>
+                <view class="settleValueItem">{{item.state}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<!--pages/withdraw/withdraw.wxml-->
+<view class="content">
+  <view class="header">
+    <view class="midLine">
+    </view>
+    <view class="title">佣金申请记录</view>
+    <view class="midLine">
+    </view>
+  </view>
+  <view class='noOrder' wx:if="{{nodata == 1}}">
+    <view class='noOrderPic'>
+      <image src='../image/noWithdraw.png' class="noOrderImg"></image>
+    </view>
+    <view class='noOrderText'>- 暂无提现记录 -</view>
+    <view class='noOrderGG' bindtap='goIndex'>去逛逛</view>
+  </view>
+  <view class="withdrawList" wx:if="{{nodata == 0}}">
+    <block wx:for="{{withdraws}}" wx:for-index="index" wx:key="{{item.id}}">
+      <view class="withdrawItem" id="{{item.billNo}}">
+        <view class="applyTime">申请时间：{{item.sqsj}}
+        </view>
+        <view class="billNo">单据号：{{item.withdrawNo}}
+        </view>
+        <view class="applyTitle">
+          <view class="applyTitleAmount">申请金额
+          </view>
+          <view class="applyTitleTax">代扣税金额
+          </view>
+          <view class="applyTitleState">状态
+          </view>
+        </view>
+        <view class="applyValue">
+          <view class="applyValueAmount">￥{{item.wdAmount}}
+          </view>
+          <view class="applyValueTax">￥{{item.wdTax}}
+          </view>
+          <view class="applyValueState">{{item.zt}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

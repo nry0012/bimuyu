@@ -1,0 +1,129 @@
+/* pages/withdraw/withdraw.wxss */
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  background-color: white;
+  color: #595959;
+}
+.header {
+  border-bottom: 10px solid #f1f4f3;
+width: 100%;
+display: flex;
+flex-direction: row ;
+align-items: center ;
+}
+.midLine {
+height: 1px;
+border-bottom: 1px solid #f1f4f3;
+width: 40% ;
+}
+.title {
+text-align: center;
+width: 20% ;
+font-size: 12px ;
+height: 30px;
+line-height: 30px;
+}
+.withdrawList {
+width: 100%;
+}
+.withdrawItem {
+border-bottom: 10px solid #f1f4f3;
+
+}
+.applyTime {
+height: 30px;
+line-height: 30px;
+border-bottom: 1px solid #f1f4f3;
+font-size: 16px ;
+padding-left:20px;
+
+}
+.billNo {
+height: 30px;
+line-height: 30px;
+border-bottom: 1px solid #f1f4f3;
+font-size: 16px ;
+padding-left:20px;
+
+}
+.applyTitle {
+height: 30px;
+line-height: 30px;
+border-bottom: 1px solid #f1f4f3;
+width: 100%;
+font-size: 16px ;
+display: flex ;
+flex-direction: row ;
+}
+.applyTitleAmount {
+width: 40%;
+border-right: 1px solid #f1f4f3;
+text-align: center;
+}
+.applyTitleTax {
+width: 40%;
+border-right: 1px solid #f1f4f3;
+text-align: center;
+}
+.applyTitleState {
+width: 40%;
+text-align: center;
+}
+.applyValue {
+height: 30px;
+line-height: 30px;
+border-bottom: 1px solid #f1f4f3;
+width: 100%;
+font-size: 16px ;
+display: flex ;
+flex-direction: row ;
+}
+.applyValueAmount {
+width: 40%;
+border-right: 1px solid #f1f4f3;
+text-align: center;
+}
+.applyValueTax {
+width: 40%;
+border-right: 1px solid #f1f4f3;
+text-align: center;
+}
+.applyValueState {
+width: 40%;
+text-align: center;
+}
+
+.noOrder {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  background: #f1f4f3;
+  height: 85vh;
+}
+
+.noOrderPic {
+  margin-top: 20vh;
+}
+
+.noOrderImg {
+  width: 285rpx;
+  height: 155rpx;
+}
+
+.noOrderText {
+  text-align: center;
+  font-size: 16px;
+  color: #595959;
+  margin: 5vh 0;
+}
+
+.noOrderGG {
+  text-align: center;
+  font-size: 16px;
+  color: #f4ab33;
+}

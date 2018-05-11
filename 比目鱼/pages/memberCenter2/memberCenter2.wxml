@@ -1,0 +1,63 @@
+<!--pages/memberCenter2/memberCenter2.wxml-->
+
+<view class="content">
+  <view class="header">
+    <view class="withdrawInfo">
+      <view class="withdrawTitle">当前可提现金额
+      </view>
+      <view class="withdrawAmount">{{withdrawAmount}}
+        <text class="withdrawAmountUnit">元</text>
+      </view>
+      <view class="withdrawHint">预计2-3个工作日到达微信钱包
+      </view>
+    </view>
+    <view class="withdrawButton">
+      <button class="withdrawButtonItem" bindtap='withdraw'>提现至微信钱包</button>
+    </view>
+  </view>
+  <view class="performance">
+    <view class="lastMonth">
+      <view class="lastMonthTitle">上月预估收入
+      </view>
+      <view class="lastMonthAmount">{{lastMonthAmount}}
+      </view>
+      <view class="lastMonthState">{{lastMonthState}}
+      </view>
+    </view>
+    <view class="separator">
+    </view>
+    <view class="nextMonth">
+      <view class="monthTitle">本月预估收入
+      </view>
+      <view class="monthAmount">{{monthAmount}}
+      </view>
+      <view class="monthState">{{monthState}}
+      </view>
+    </view>
+  </view>
+  <view class="sep1">每月25日结算上月预估收入，每月5-10日为结算收入提现日
+  </view>
+  <view class="point">
+    <view>
+      <button class="pointButton">积分兑换</button>
+    </view>
+  </view>
+  <view class="sep1">投资理财
+  </view>
+  <view class="finance">
+    <view class='financeButton'>
+      <button class="financeButtonItem">零存整取 </button>
+    </view>
+    <view class="financeHint">使用此功能将自动为您储蓄
+    </view>
+  </view>
+  <view class="sep1">人身保险
+  </view>
+  <view class="insurance">
+    <view class='insuranceButton'>
+      <button class="insuranceButtonItem">投保计划 </button>
+    </view>
+    <view class="insuranceHint">服务商为太平洋保险公司
+    </view>
+  </view>
+</view>

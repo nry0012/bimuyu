@@ -1,0 +1,98 @@
+/* user.wxss */
+
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.tu {
+  width: 750rpx;
+  height: 1334rpx;
+}
+
+.joinus {
+  position: absolute;
+  left: 170rpx;
+  top: 840rpx;
+  width: 195rpx;
+  height: 58rpx;
+  background: blue;
+  opacity: 0;
+}
+
+.actRule {
+  position: absolute;
+  left: 370rpx;
+  top: 840rpx;
+  width: 195rpx;
+  height: 58rpx;
+  background: grey;
+  opacity: 0;
+}
+
+.invite {
+  position: absolute;
+  left: 180rpx;
+  top: 1200rpx;
+  width: 420rpx;
+  height: 78rpx;
+  background: none;
+  opacity: 0;
+}
+
+.bonus {
+  position: absolute;
+  left: 100rpx;
+  top: 710rpx;
+  width: 545rpx;
+  height: 120rpx;
+  background: none;
+  opacity: 0;
+}
+
+.commodity_attr_box1 {
+  border-radius: 10px;
+  position: fixed;
+  z-index: 20000;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-erweima {
+  position: relative;
+}
+
+.joinImg {
+  width: 650rpx;
+  height: 520rpx;
+}
+
+.joinButton {
+  position: absolute;
+  top: 440rpx;
+  left: 130rpx;
+  width: 390rpx;
+  height: 80rpx;
+}
+
+.joinCancel {
+  position: absolute;
+  top: 00rpx;
+  right: 0px;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.ruleImg {
+  width: 651rpx;
+  height: 943rpx;
+}

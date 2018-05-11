@@ -1,0 +1,30 @@
+<!--pages/systemSetting/systeSetting.wxml-->
+<import src="../../component/toast/toast.wxml" />
+<template is="toast" data="{{ ..._toast_ }}" />
+
+<view class="content">
+	<view class="header" >
+		<view class="Left">
+		佣金显示
+		</view>
+		<view class="Right">
+    <switch checked="{{isCheck}}" bindchange="switchChange"/>
+		</view>
+	</view>
+	<view class="header" bindtap='userContract'>
+		<view class="Left">
+		用户协议
+		</view>
+		<view class="Right">
+    >
+		</view>
+	</view>	
+	<view class="header" bindtap='joinUs'>
+		<view class="Left">
+		加入我们
+		</view>
+		<view class="Right">
+		mazon.zhang@migze.com
+		</view>
+	</view>
+</view>

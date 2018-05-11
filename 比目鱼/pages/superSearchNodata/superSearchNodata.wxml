@@ -1,0 +1,7 @@
+<!--user.wxml-->
+<import src="../../component/title/title.wxml" />
+
+<view class="container">
+  <template is="compBack" data="{{ ...comTitle}}" />
+  <image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/superSearchTutorial.png" class="tu"></image>
+</view>

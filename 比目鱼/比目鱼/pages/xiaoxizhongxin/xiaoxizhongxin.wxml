@@ -1,0 +1,42 @@
+<!--xiaoxizhongxin.wxml-->
+
+<view class="container">
+  <view class="top" wx:if="{{flag==0}}">
+    <block wx:for-items="{{goodsdata}}" wx:key="{{item.msgID}}">
+      <view class='msgBlock'>
+        <view class="xinxi" bindtap="xiaoxi" data-id='{{item.msgID}}'>
+          <!--          <view class="xiaoxikuai">
+            <image src="../image/xiaoxi.png" class="xiaoxitu" wx:if="{{item.msgState==0}}"></image>
+            <image src="../image/xiaoxihui.png" class="xiaoxitu" wx:if="{{item.msgState==1}}"></image>
+          </view>  -->
+          <view class="gongxikuai">
+            <text class="gongxi1" wx:if="{{item.msgState==1}}">{{item.msgContent}}</text>
+            <text class="gongxi" wx:if="{{item.msgState==0 && item.msgDealStyle==1}}">{{item.msgContent}}</text>
+            <text class="gongxi2" wx:if="{{item.msgState==0 && item.msgDealStyle!=1}}">{{item.msgContent}}</text>
+          </view>
+          <view class="xiaoxikuai">
+            <image src="../image/message_open.png" class="xiaoxitu" wx:if="{{item.msgDealStyle!=1}}"></image>
+          </view>
+        </view>
+        <view class="riqikuai">
+          <text class="date" wx:if="{{item.msgState==0}}">{{item.msgDate}}</text>
+          <text class="date1" wx:if="{{item.msgState==1}}">{{item.msgDate}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="top" wx:if="{{flag==1}}">
+    <view class="wuxiaoxi">
+      <view class="xiaoxi-ziti">无更多消息</view>
+    </view>
+  </view>
+  <view class="bottom">
+
+
+    <view class="footer1">
+      <view class="footer-left1" bindtap="quanbushanchu">
+        <text class="shanchu">阅 后 即 焚</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,82 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/millionAct/millionAct",
+    "pages/mine/mine",
+    "pages/withdrawAct/withdrawAct",
+    "pages/memberCenter2/memberCenter2",
+    "pages/withdraw/withdraw",
+    "pages/memberCenter/memberCenter",
+    "pages/agent/agent",
+    "pages/chengyuan/chengyuan",
+    "pages/rili/rili",
+    "pages/suggest/suggest",
+    "pages/huobisanjia/huobisanjia",
+    "pages/search/search",
+    "pages/chanpinneiye/chanpinneiye",
+    "pages/tehui/tehui",
+    "pages/quanwangyouxuan/quanwangyouxuan",
+    "pages/baoyou/baoyou",
+    "pages/sousuowuxiao/sousuowuxiao",
+    "pages/sort/sort",
+    "pages/sortsearch/sortsearch",
+    "pages/activity/activity",
+    "pages/Rand/Rand",
+    "pages/xiaoxizhongxin/xiaoxizhongxin",
+    "pages/jiaocheng/jiaocheng",
+    "pages/user/user",
+    "pages/lingquan/lingquan",
+    "pages/webview/webview",
+    "pages/calender/calender",
+    "pages/joinUflounder/joinUflounder",
+    "pages/similarGoods/similarGoods",
+    "pages/priviledge/priviledge",
+    "pages/registerPhone/registerPhone",
+    "pages/openMember/openMember",
+    "pages/superSearch/superSearch",
+    "pages/superSearchNodata/superSearchNodata",
+    "pages/secretary/secretary",
+    "pages/systemSetting/systemSetting",
+    "pages/memberUpgrade/memberUpgrade"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "比目鱼生活",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#F54751",
+    "backgroundColor": "#f8f8f8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页推荐",
+        "iconPath": "pages/image/tuijianhui.png",
+        "selectedIconPath": "pages/image/tuijianhuang.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "超级搜索",
+        "iconPath": "pages/image/sousuohui.png",
+        "selectedIconPath": "pages/image/sousuohuang.png"
+      },
+      {
+        "pagePath": "pages/baoyou/baoyou",
+        "text": "三十封顶",
+        "iconPath": "pages/image/fengdinghui.png",
+        "selectedIconPath": "pages/image/fengdinghuang.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "pages/image/gerenhui.png",
+        "selectedIconPath": "pages/image/gerenhuang.png"
+      }
+    ]
+  }
+}

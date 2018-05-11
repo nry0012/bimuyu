@@ -1,0 +1,112 @@
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "PingFangSC-Regular";
+  background-color: white;
+  color: #1e2d23;
+  border-top: 1px solid #b8b8b8;
+}
+
+.quesBlock {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  margin: 2% 6%;
+  border-bottom: 1px solid #b8b8b8;
+  padding-bottom: 12rpx;
+}
+
+.quesLeft {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #b8b8b8;
+}
+
+.quesTypeImg {
+}
+
+.quesTypeImgItem {
+  width: 100rpx;
+  height: 99rpx;
+}
+
+.quesTypeName {
+  text-align: center;
+  font-size: 14px;
+}
+
+.quesList {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+}
+
+.quesItem {
+  text-align: left;
+  font-size: 14px;
+  width: 100%;
+  padding: 7px 0;
+}
+
+.commodity_attr_box1 {
+  border-radius: 10px;
+  position: fixed;
+  z-index: 20000;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.coverContent {
+width:70%;
+height:70%;
+background:white;
+color:black;
+display:flex;
+flex-direction:column;
+align-items:center;
+border-top:50px;
+
+}
+.question {
+display:flex;
+flex-direction:row;
+width:90%;
+justify-content:center;
+
+text-align:left;
+margin-top:30rpx;
+
+}
+.left {
+  width: 20% ;
+  font-size: 16px;
+  color: #1e2d23 ;
+}
+.qstext {
+  width: 80% ;
+  font-size: 14px;
+  color: #b8b8b8 ;
+  text-align:left;
+font-weight:bold;
+color:black;
+
+}
+.anstext {
+  width: 80% ;
+  font-size: 14px;
+  color: #b8b8b8 ;
+  text-align:left;
+}

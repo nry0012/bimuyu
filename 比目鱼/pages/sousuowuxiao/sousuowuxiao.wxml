@@ -1,0 +1,62 @@
+<!--sousuowuxiao.wxml-->
+<import src="../../component/toast/toast.wxml"/>
+<template is="toast" data="{{ ..._toast_ }}"/>
+<import src="../../component/title/title.wxml" />
+
+<view class="container">
+<template is="compTitle" data="{{ ...comTitle}}" />
+  <view class="top_top">
+    <image src="../image/fangdajing.png" class="fangdajing"></image>
+    <image src="../image/cancel.png" class="inputCancel" wx:if="{{showCancel}}" bindtap='cancelInput'></image>
+    <view class="top_guding1">
+      <view class="biandongkuai">
+        <view class="classname">
+          <input type="text" confirm-type="search" bindconfirm="search" bindinput="searchInput" placeholder-class="kuangneiziti" class="shurukuang" placeholder="{{isFocus?'输入产品名称或标题':''}}" bindblur="lostFocus" bindfocus="inputFocus" value='{{searchItem}}' />
+        </view>
+        <!-- <view class="sousuoziti">
+          <text class="sousuo" bindtap="search">搜索</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+
+    <view class="sousuolishi">
+      <view class="top_lishi">
+        <text class="chaxun">热门搜索</text>
+        <!-- <image src="../image/huanyipi.png" class="huanyipi1"></image>
+          <text class="qingkong" bindtap="huanyipi">换一批</text> -->
+      </view>
+      <view class="zongxiang">
+        <view class="hengxiang">
+          <block wx:for="{{goodsdata3}}" wx:key="{{item.remenID}}">
+            <view class="zongxiang1" bindtap="hotSearch" id="{{item.remenID}}"  data-name="{{item.remen}}">
+              <text class="chaxunziti">{{item.remen}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="bottom2" wx:if="{{yangshi==true}}">
+      <view class="sousuolishi">
+        <view class="top_lishi">
+          <text class="chaxun">历史搜索</text>
+          <image src="../image/qingchu.png" class="qingchu"></image>
+          <text class="qingkong" bindtap="qingkong">清除</text>
+        </view>
+        <view class="zongxiang">
+          <view class="hengxiang">
+            <block wx:for="{{goodsdata2}}" wx:key="{{item.id}}" wx:if="{{goodsdata2.length>0}}">
+              <view class="zongxiang1" bindtap="historySearch" id="{{item.skKey}}">
+                <text class="chaxunziti">{{item.skKey}}</text>
+              </view>
+            </block>
+            <view class="zongxiang" wx:if="{{goodsdata2.length==0}}">
+              <text class="zanwu">- 暂无搜索历史 -</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

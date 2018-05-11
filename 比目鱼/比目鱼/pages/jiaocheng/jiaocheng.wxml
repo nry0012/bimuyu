@@ -1,0 +1,4 @@
+<!--jiaocheng.wxml-->
+<view class="container">
+<image src="http://xcx.byscape.com/xbm_rootdir/mamamiya/resource/jiaocheng.png" class="jiaocheng-img"></image>
+</view>

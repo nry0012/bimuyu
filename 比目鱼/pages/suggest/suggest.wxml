@@ -1,0 +1,39 @@
+<view class="content">
+  <block wx:for="{{questions}}" wx:for-index="index" wx:key="{{item.qtID}}">
+    <view class="quesBlock">
+      <view class="quesLeft">
+        <view class="quesTypeImg">
+          <image class="quesTypeImgItem" src="{{item.qtPic}}"></image>
+        </view>
+        <view class="quesTypeName">{{item.qtName}}>
+        </view>
+      </view>
+      <view class="quesList">
+        <block wx:for="{{item.Question}}" wx:for-index="index" wx:key="{{item.qsID}}">
+          <view class="quesItem" id="{{item.id}}" bindtap="quesItem" style='border-bottom:{{item.Last?"":"1px solid #b8b8b8"}}'>{{item.qsContent}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class="coverlayer_ground" bindtap="hideItem" wx:if="{{showStatus}}"></view>
+<view class="commodity_attr_box1"  bindtap="hideItem" wx:if="{{showStatus}}">
+  <view class='coverContent'>
+    <view class="question">
+      <view class="left">Q：
+      </view>
+      <view class="qstext">
+      <text>{{question}}</text>
+      </view>
+    </view>
+    <view class="question">
+      <view class="left">A：
+      </view>
+      <view class="anstext">
+        <text>{{answer}}</text>
+      </view>
+    </view>
+  </view>
+</view>
